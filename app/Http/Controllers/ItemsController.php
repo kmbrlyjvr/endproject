@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Items;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemsController extends Controller
@@ -15,7 +15,7 @@ class ItemsController extends Controller
 
     public function index()
     {
-        $items = Items::all();
+        $items = Item::all();
         /*return view('items.index', ['item' => $item]);*/
         return view('items.index', ['items' => $items]);
     }
@@ -26,15 +26,15 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function customize(Items $item)
+    public function customize(Item $item)
     {
         return view('items.customize', ['item' => $item]);
     }
 
     public function create()
     {
-        $items = new Items;
-        return view('items.create', compact('posting'));
+        $items = new Item;
+        return view('items.create', compact('item'));
     }
 
     /**
@@ -49,7 +49,7 @@ class ItemsController extends Controller
             'mime_type' => 'required|mimetypes:svg,jpeg,jpg|max:2000',
         ]);
 
-        $item = new Items();
+        $item = new Item();
         $item->fill($request->all());
         $item->save();
 

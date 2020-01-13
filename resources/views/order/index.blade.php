@@ -2,7 +2,7 @@
 @section('container')
 
 <div class="defaultcontainer">
-<h2>Cart</h2>
+<h2 class="title">Cart</h2>
 
 <div class="summary">
 

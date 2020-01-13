@@ -18,8 +18,8 @@
                         <!--<div class="img"><img src="/imgs/moon.png" style="width: 40vh; margin: -90px;"></div>-->
                 
                     @if(auth()->check())
-                    <li class="user">
-                            Hi, <a class="nav-link" href="">{{ auth()->user()->name }}</a>
+                    <li class="user" style="color:var(--main);">
+                            Hi, <a class="highlightnude" href="">{{ auth()->user()->name }}</a>
                     </li>
 
                     <li class="userlogout">

@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lekton&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Kumar+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap');
 
 :root {
   --main: #f1e1d8;
+  --nude: #b38383;
 }
 
 * {
@@ -116,7 +117,7 @@ body {
 .loginreg ul {
   position: fixed;
   list-style: none;
-  color: var(--main);
+  color: white;  
   line-height: 25px;
 }
 
@@ -129,12 +130,14 @@ a:hover {
   color: white;
 }
 
-.user {
+.user li{
    list-style: none;
+   color: var(--main);
 }
 
 .userlogout {
   list-style: none;
+  color:white;
 }
 
 footer .logo {
@@ -194,6 +197,8 @@ footer a.active {
 }
 
 .back_button {
+  position: absoulute;
+  z-index: 9;
   margin: 40px 50px 0 50px;
   color: #1e1e1e;  
 } 
@@ -318,7 +323,9 @@ button {
   z-index: -4;
 }
 
-h2{
+.title  {
+  position: absolute;
+  z-index: 6;
 	width: 100%;
 	text-align: center;
 	padding-bottom: 20px;
@@ -333,6 +340,7 @@ h2{
 }
 
 .custom_nav {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -517,23 +525,117 @@ h2{
 
 /* ##### BLOG ##### */
 
+.blogcontainer {
+  display: flex;
+  justify-content: flex-start;  
+  margin: -80px 0;
+  background-color: var(--main);
+}
+
 .blogcontainer img {
-  position: relative;
-  background-size: cover;
+  background-size:  cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 80vh;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  bottom: 0;
+  background-blend-mode: overlay;
+  width: 100%;
 }
 
 .blogpost {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 30vh 0;
+}
+
+.blogpost p {
+  color: white;
+  width: 40vh;
+}
+
+.designername {
+  position: absolute;
+  font-family: 'Racing Sans One', cursive;  
+  color: #b38383;
+  font-size: 3em;
+  width: 40px;
+}
+
+.blogheroimage img{
+  opacity: 0.8;
+}
+
+.blogpost img {
+  width: 50vh;
+  height: 100%;
+}
+
+.bigtext {
+  position: absolute;
+  font-size: 2em;
+  color: var(--main);
+  text-transform: uppercase;
+  width: 80vh;
+  margin: 0 50vh 0;
+}
+
+.blogimagessmall {
+  display: flex;
+  background-color: var(--main);
+  width: 100%;
+}
+
+.blogimagethree img {
+  width: 25em;
+  border: 3px solid #b38383;
+}
+
+.blogimagethree {
   display: flex;
   justify-content: center;
-  width: 50vh;
+  width: 100%;
+  margin: 30vh 0;
+
 }
+
+.blogimagefour img {
+  width: 30em;
+  border: 3px solid #b38383;
+}
+
+.blogimagefour {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 30vh 0;
+}
+
+.bigtextcontainer {
+position: absolute;
+}
+
+.uploadcontainer {
+  display: flex;
+  flex-direction: row;
+  margin: 30vh 0;
+}
+
+.highlight {
+  background-color:#000000d9;
+  padding: 0 10px 0;
+}
+
+.highlightnude {
+  background-color:#b38383;
+  padding: 0 10px 0;
+}
+
+
+.highlightbigtext {
+  background-color:#b38383;
+  padding: 0 10px 0;
+}
+
 
 /* ##### MEDIA QUERIES ##### */
 
@@ -549,6 +651,7 @@ h2{
   height: 20px;
   margin: 100px;
   font-size: 3em;
+  position: fixed;
 }
 
 .loginreg ul {
@@ -614,8 +717,9 @@ textarea::placeholder {
   line-height: 1.5; 
 }
 
-.pick-color {
-  display: flex;
+
+.pick-color h2 {
+  color: black;
 }
 
 .custom h2 {
@@ -693,13 +797,26 @@ textarea::placeholder {
   width: 25em;
 }
 
+/* ##### ABOUT ##### */
 
 .aboutcontainer {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 80vh;
+  justify-content: flex-start;  
+  background-color: var(--main);
+}
+
+.aboutcontainer img {
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+  width: 10px;
+
+}
+
+.aboutheroimage img{
+  opacity: 0.8;
+
 }
 
 footer {

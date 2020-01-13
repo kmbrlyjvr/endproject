@@ -40,7 +40,7 @@
 
 
 <div class="homecontainer">
-    <h2>Designer of the month</h2>
+    <h2 class="title">Designer of the month</h2>
 
   <div class="home-inner">
     <img src="/imgs/ryerson_logo.png" style="width: 30em;">

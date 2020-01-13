@@ -2,22 +2,37 @@
 
 @section('container')
 
-	<div class="row justify-content-center">
-		<div class="col-6">
+<div class="defaultcontainer">
 
-			<div class="card card-body">
+<div class="formcontainer">
 
-				<h1>Upload your project:</h1>
+		<h2 class="title">Upload new Blogpost:</h1>
 
-				<form action="{{ route('blog.store') }}" method="post" autocomplete="off">
-
-					@include('blog_form')
-
-				</form>
-
-			</div>
-
+			<form class="add-blogpost"  action="{{ route('blog.store')}}" method="post" enctype="multipart/form-data">
+				@csrf
+						<br>
+						<div class="form-label-group">
+								<label for="img">Image</label><br>
+								<input type="file" name="img" id="img" class="">
+						</div>
+								<br>
+								<div class="form-label-group">
+									<label for="title">Title</label><br>
+									<input type="text" name="title" id="title" class="">
+								</div>
+								<br>
+					
+								<div class="form-label-group">
+									<label for="text">Text</label><br>
+									<input type="text" name="text" id="text" class="">
+								</div>
+						<br>
+						<div class="form-label-group"><br>
+							<button type="submit">Done</button>
+						</div>
+			</form>
 		</div>
 	</div>
+</div>
 
 @endsection

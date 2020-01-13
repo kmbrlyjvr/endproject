@@ -24,12 +24,33 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create(Request $request)
     {
         $blog = new Blog;
-        $blog->fill($request->old());
-        
-        return view('blog.create'. compact('blog'));
+
+        return view('blog.create', compact('blog'));
+    }
+
+    
+    public function upload(Request $request)
+    {
+        if (!empty($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
+
+            $folder = "assets/img/";
+
+            if (!empty($_FILES['img']['tmp_name'])) {
+                $img = $folder . $_FILES['img']['name'];
+                move_uploaded_file($_FILES['publig/img']['tmp_name'], $img);
+            } 
+
+            echo "<div class=\"successupload\"><p>Successfully Uploaded!</p></div>";
+
+            $blog = new Blog();
+            $blog->setBlog($_POST['title'],$_POST['text'],$folder.$_FILES['image']['name']);
+        }
+
+        return redirect()->route('blog.index')->with('success');
     }
 
     /**
@@ -53,21 +74,7 @@ class BlogController extends Controller
         $blog->user_id = auth()->id();
         $blog->save();
 
-        return redirect()->route('blog.show', $blog->id)->with('success', 'blog created');
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $blog = Blog::findOrFail($id);
-
-        return view('blog.show', ['blog' => $blog]);
+        return redirect()->route('blog.store', $blog->id)->with('success', 'blog created');
 
     }
 
@@ -77,10 +84,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Blog $blog)
     {
         $blog = Blog::findOrFail($id);
-        $blog->fill($request->old());
 
         return view('blog.edit', compact('blog'));
     }
@@ -92,7 +98,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Blog $blog)
     {
         $this->validate($request, [
             'title' => 'required|string|min:3|max:192',
@@ -100,12 +106,11 @@ class BlogController extends Controller
             'img' => 'required',
         ]);
         
-        $blog = blog::findOrFail($id);
         $blog->fill($request->all());
         $blog->is_published = $request->has('is_published');
         $blog->save();
 
-        return redirect()->route('blog.show', $blog->id)->with('success', 'Blog updated!');
+        return redirect()->route('blog.index', $blog->id)->with('success', 'Blog updated!');
     }
 
     /**
@@ -114,11 +119,10 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Blog $blog)
     {
-        $blog = Blog::findOrFail($id);
         $blog->delete();
 
-        return redirect()->route('blog')->with('success', 'Blogpost deleted!');
+        return redirect()->route('blog.index')->with('success', 'Blogpost deleted!');
     }
 }

@@ -8,7 +8,7 @@
               </a>
             <li><a href="{{ route('blog.index') }}">blog</a></li>
             @if(auth()->check())
-            <li><a class="nav-link" href="{{ route('auth.logout') }}">logout</a></li>
+            <li><a class="nav-link" href="">profile</a></li>
 
             @else
             <li><a href="{{ route('auth.login') }}">login</a></li>

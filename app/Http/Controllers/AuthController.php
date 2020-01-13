@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; 
 
 class AuthController extends Controller
 {
+
+   /* protected function redirectTo()
+    {
+        if(Auth::user()->user_group == 1)
+        {
+            return view('admin.index');
+        } else {
+            return view('home');
+        }
+    }*/
+
     public function login()
     {
         return view('auth.login');
@@ -63,13 +75,5 @@ class AuthController extends Controller
 
         return redirect()->route('home')->with('success', 'Welcome');
     }
-
-    public function profile($id)
-    {
-        $user = User::findOrFail($id);
-
-        return view('auth.profile', ['user' => $user]);
-    }
-
  
 }

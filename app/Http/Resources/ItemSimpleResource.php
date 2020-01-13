@@ -13,7 +13,6 @@ class ItemSimpleResource extends JsonResource
 
             'id' => $this->id,
             'title' => $this->title,
-            'mime_type' => Str::limit($this->text, 20),
             'created_at' => nice_date($this->created_at),
         ];
     }

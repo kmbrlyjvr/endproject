@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('container')
 
-<h2 class="choosetrouserfont">1. Choose your favourite trousers</h2>
+<div class="defaultcontainer">
+    <h2 class="title">1. Choose your favourite trousers</h2>
 
    
 <div class="trouserscontainer2">
@@ -15,6 +16,7 @@
                 </div>
             </a>
         @endforeach
+    </div>
 
         
 @endsection

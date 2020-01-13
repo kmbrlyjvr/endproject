@@ -2,7 +2,7 @@
 @section('container')
 
 <div class="defaultcontainer">
-        <h2>RECEIPT</h2>
+        <h2 class="title">RECEIPT</h2>
         
         <div class="receipt">
                 <img src="/svgs/logo.svg">

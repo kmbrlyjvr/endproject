@@ -1,9 +1,12 @@
 @extends('layouts.master')
 @section('container')
 
+<!--<h2>Upload new designers project</h2>-->
+
+<div class="defaultcontainer">
+
 <div class="uploadcontainer">
 
-    <h2>Upload new designers project</h2>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
@@ -30,7 +33,16 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="file" name="image" class="form-control">
+                        <input type="file" id="hero" name="image" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" id="imagetwo" name="image" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" id="imagethree" name="image" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" id="imagefour" name="image" class="form-control">
                     </div>
 
                     <div class="col-md-6">
@@ -40,7 +52,7 @@
             </form>
         </div>
     </div>
-</div>
+
 
 @endsection
 
