@@ -77,18 +77,6 @@ body {
   width: 20vh;
 }*/
 
-.sintastory {
-  display: flex;
-  justify-content: center;
-  line-height: 1.5;
-  padding: 100px;
-}
-
-.sintastory p {
-  text-align: center;
-  width: 30em;
-  color: white;
-}
 
 .how {
   display: flex;
@@ -203,6 +191,135 @@ footer a.active {
   color: #1e1e1e;  
 } 
 
+/* ##### ABOUT ##### */
+
+.aboutcontainer {
+  display: flex;
+  justify-content: space-evenly;  
+  margin: -80px 0;
+}
+
+.aboutcontainer img {
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+  width: 176vh;
+}
+
+.aboutpost {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80vh;
+  margin: 30vh 0;
+}
+
+.aboutpost h2 {
+  text-align:center;
+  color: var(--main);
+  text-transform:uppercase;  
+  font-family: 'Racing Sans One', cursive;  
+  font-size: 5em;
+}
+
+.aboutpost p {
+  color: white;
+}
+
+.aboutinfos {
+  display: flex;
+  justify-items: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  background-color: var(--nude);
+}
+
+.aboutlogo {
+  display: flex;
+  position: absolute;
+  z-index: 7;
+  margin: -5vh 0;
+}
+
+.aboutlogo img{
+  width: 43vh;
+}
+
+.aboutproduction {
+  width: 80vh;
+  margin: 20vh 0;
+}
+
+.aboutproduction p {
+  color: black;
+}
+
+.aboutsustain {
+  width: 80vh;
+}
+
+.aboutsustain p {
+  color: black;
+}
+
+/* ##### HELP ##### */
+
+.help_button {
+  position: absolute;
+  position: fixed;
+  z-index: 9;
+  margin: 85vh 170vh 0;
+  background-color: var(--nude);
+  text-transform: uppercase;
+}
+
+.helpcontainer {
+  display: flex;
+  justify-content: flex-start;  
+  margin: -80px 0;
+  background-color: var(--main);
+}
+
+.helpcontainer h2 {
+  text-align:center;
+  color: var(--main);
+  text-transform:uppercase;  
+  font-size: 3em;
+}
+
+.helpcontainer img {
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+  opacity: 0.6;
+  width: 100%;
+}
+
+.helpinfos {
+  display: flex;
+  justify-items: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+}
+
+.shipping {
+  width: 90vh;
+  margin: 20vh 0;
+}
+
+.shipping p {
+  color: white;
+  font-size: 1.5em;
+}
+
+/* ##### FORMS ##### */
+
 .formcontainer  {
   display: flex;
   flex-direction: column;
@@ -272,6 +389,10 @@ footer a.active {
   border-bottom: 1px solid black;
 }
 
+/*.form-label-group input[type=text] {
+  height: 100px;
+}*/
+
 .regformcontainer label {
   color: #fff;
 }
@@ -298,14 +419,10 @@ button {
 
 .trouserscontainer {
   position: relative;
-  top: 60px;
+  top: 70px;
   left: 0;
 }
 
-.trouser {
-  width: 13em;
-  margin: 50px 0 0 200px;
-}
 
 .trousers {
   width: 15em;
@@ -316,20 +433,14 @@ button {
 }
 
 
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -4;
-}
-
 .title  {
   position: absolute;
   z-index: 6;
 	width: 100%;
 	text-align: center;
 	padding-bottom: 20px;
-	font-weight: 700;
+  font-weight: 700;
+  color: var(--main);
 }
 
 /* ##### TROUSERS CUSTOMIZATION ##### */
@@ -346,7 +457,7 @@ button {
   justify-content: flex-end;
   position: fixed;
   width: 100%;
-  margin: 60px 0;
+  margin: 20px 0;
 }
 
 
@@ -511,7 +622,7 @@ button {
   flex-direction: column;
   flex-wrap: wrap;
   width: 200px;
-  margin: 0 0 0 70vh;
+  margin: 15vh 0 0 70vh;
 }
 
 .summary {
@@ -520,7 +631,11 @@ button {
   flex-direction: column;
   flex-wrap: wrap;
   width: 200px;
-  margin: 0 0 0 70vh;
+  margin: 15vh 0 0 70vh;
+}
+
+.orderlogin li{
+  list-style: none;
 }
 
 /* ##### BLOG ##### */
@@ -630,12 +745,10 @@ position: absolute;
   padding: 0 10px 0;
 }
 
-
 .highlightbigtext {
   background-color:#b38383;
   padding: 0 10px 0;
 }
-
 
 /* ##### MEDIA QUERIES ##### */
 
@@ -727,9 +840,7 @@ textarea::placeholder {
   font-weight: 700;
 }
 
-.trouser {
-  width: 30em;
-}
+
 
 .colors-1 > li{
   list-style: none;
@@ -797,27 +908,6 @@ textarea::placeholder {
   width: 25em;
 }
 
-/* ##### ABOUT ##### */
-
-.aboutcontainer {
-  display: flex;
-  justify-content: flex-start;  
-  background-color: var(--main);
-}
-
-.aboutcontainer img {
-  background-size:  cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: overlay;
-  width: 10px;
-
-}
-
-.aboutheroimage img{
-  opacity: 0.8;
-
-}
 
 footer {
   margin: 0 20px 0 11px;

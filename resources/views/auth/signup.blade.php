@@ -28,6 +28,36 @@
 					</div>
 
 					<div class="form-group">
+							<div class="form-label-group">
+								<label>Adress</label>
+								<input type="text" class="form-control" name="adress" required>
+							</div>
+						</div>
+
+					<div class="form-group">
+							<div class="form-label-group">
+								<label>ZIP Code</label>
+								<input type="text" class="form-control" name="zip" required>
+							</div>
+						</div>
+						<div class="form-group">
+								<div class="form-label-group">
+									<label for="country">Select Country</label>
+									<select name="country" id="country">
+											<option value="Austria">Austria</option>
+											<option value="Belgium">Belgium</option>
+											<option value="Canada">Canada</option>
+											<option value="Denmark">Denmark</option>
+											<option value="Norway">Norway</option>
+											<option value="Philippines">Philippines</option>
+											<option value="Sweden">Sweden</option>
+											<option value="United Kingdom">United Kingdom</option>
+											<option value="United States">United States</option>
+									</select>
+								</div>
+							</div>
+
+					<div class="form-group">
 						<div class="form-label-group">
 							<label>Password</label>
 							<input type="password" class="form-control" name="password" required>

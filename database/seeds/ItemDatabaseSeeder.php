@@ -14,19 +14,22 @@ class ItemDatabaseSeeder extends Seeder
        Item::create([
             'title' => 'Ryerson 001',
             'text' => 'trouser',
-            'svg' => 'slack',
+            'svg' => 'trouser',
+            'price' =>'140€'
         ]);
 
         Item::create([
             'title' => 'Ryerson 002',
             'text' => 'utility',
             'svg' => 'utility',
+            'price' => '180€'
         ]);
 
         Item::create([
             'title' => 'Ryerson 003',
             'text' => 'overall',
             'svg' => 'overall',
+            'price' => '200€'
         ]);
     }
 }

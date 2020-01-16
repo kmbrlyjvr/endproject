@@ -17,7 +17,6 @@ class BlogController extends Controller
         return view('blog.index');
     }
 
-   
 
     /**
      * Show the form for creating a new resource.
@@ -33,7 +32,7 @@ class BlogController extends Controller
     }
 
     
-    public function upload(Request $request)
+  /* public function upload(Request $request)
     {
         if (!empty($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -51,7 +50,7 @@ class BlogController extends Controller
         }
 
         return redirect()->route('blog.index')->with('success');
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -61,7 +60,30 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $blog = new Blog();
+
+        $blog->title = $request->input('title');
+        $blog->text = $request->input('text');
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $File->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('public/designers/', $filename);
+            $blog->image = $filename;
+
+        } else {
+
+            return $request;
+            $blog->image= '';
+        }
+            $blog->save();
+
+            return view('blog.index')->with('blog', $blog);
+    }
+
+
+        /*$this->validate($request, [
             'title' => 'required|string|min:3|max:192',
             'text' => 'required|string|between:2,140',
             'img' => 'required',
@@ -75,8 +97,16 @@ class BlogController extends Controller
         $blog->save();
 
         return redirect()->route('blog.store', $blog->id)->with('success', 'blog created');
+        }*/
+    
+    /*public function show()
+    {
+        $blog = Blog::all();
 
+        return view('')
     }
+*/
+    
 
     /**
      * Show the form for editing the specified resource.

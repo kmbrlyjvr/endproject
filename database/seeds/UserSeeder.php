@@ -18,6 +18,10 @@ class UserSeeder extends Seeder
             'name' => 'Kimberly Javier',
             'email' => 'kmbrly@gmail.com',
             'password' => 'password',
+            'adress' => 'Neubaugasse 56',
+            'zip' => '1060 Vienna',
+            'Country' => 'Austria',
+            'user_group' => '1'
         ]);
 
     }

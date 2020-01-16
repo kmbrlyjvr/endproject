@@ -21,6 +21,12 @@ class HomeController extends Controller
         return view('contact.index');
     }
 
+    public function help()
+    {
+        return view('help');
+
+    }
+
     public function notfound()
     {
         return view('404');

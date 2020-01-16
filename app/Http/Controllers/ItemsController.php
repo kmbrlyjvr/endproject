@@ -27,7 +27,7 @@ class ItemsController extends Controller
      */
 
     public function customize(Item $item)
-    {
+    {   
         return view('items.customize', ['item' => $item]);
     }
 
@@ -53,6 +53,6 @@ class ItemsController extends Controller
         $item->fill($request->all());
         $item->save();
 
-        return redirect()->route('items.index')->with('success', 'Your custom has been submitted!');
+        return redirect()->route('order.index')->with('success', 'Your custom has been submitted!');
     }
 }

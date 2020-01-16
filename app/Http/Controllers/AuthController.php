@@ -66,6 +66,9 @@ class AuthController extends Controller
             'name' => 'required|min:2',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed|min:8',
+            'adress' => 'required|min:5',
+            'zip' => 'required|min:2',
+            'country' => 'required',
             'accept_terms' => 'accepted',
         ]);
 

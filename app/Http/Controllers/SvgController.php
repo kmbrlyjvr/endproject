@@ -27,13 +27,15 @@ class SvgController extends Controller
         switch($file) {
             case "overall":
             $view = 'svg.renderOverallSvg';
+            break;
 
             case "utility":
             $view = 'svg.renderUtilitySvg';
+            break;
 
-            case "slack": 
+            case "trouser": 
             default: 
-            $view = 'svg.renderSlackSvg';
+            $view = 'svg.renderTrouserSvg';
         }
         return response()->view($view, ['config' => $config])->header('Content-Type', 'image/svg+xml');
 

@@ -9,28 +9,21 @@
         <table>
             <tbody>
                 <tr>
+                    <td>Trousers</td>
+                    <td>Ryerson 001</td>
+                    <img style="width: 100px;" src="{{ route('order.renderSvgSession') }}" />
+                    </tr>
+                <tr>
                     <td>NAME</td>
-                    <td>username</td>
+                    <td>users name</td>
                 </tr>
                 <tr>
                     <td>DATETIME</td>
-                    <td>00.00.2020 00:00PM</td>
-                </tr>
-                <tr>
-                    <td>Trousers</td>
-                    <td>Ryerson 001</td>
-                    <td>IMAGE
-                        
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>Colors</td>
-                    <td>002 Colors</td>
+                    <td>00.00.2020</td>
                 </tr>
                 <tr>
                     <td>SUBTOTAL</td>
-                    <td>00,0€</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>SHIPPING</td>
@@ -41,17 +34,22 @@
                     <td>00,0€</td>
                 </tr>
                 <tr>
+                    <td>Status</td>
+                    <td>00,0€</td>
+                </tr>
+                <tr>
                     <td>PAYMENT</td>
-                    <td>visa</td>
+                    <td>PayPal</td>
                 </tr>
             </tbody>
         </table>
 
-        @if(auth()->check())
-        <button type="submit" class="trouser-save">Order now</button>
+    <div class="orderlogin">
+    @if(auth()->check())
+    <a href="{{ route('order.receipt') }}">Order now</a>
     @else
-        <li> <a href="{{ route('auth.login')}}">login</a></li>
-        <li> <a href="{{ route('auth.signup')}}">sign up</a></li>
+     <a href="{{ route('auth.login')}}">login</a>
+     <a href="{{ route('auth.signup')}}">sign up</a>
     @endif
     </div>
 

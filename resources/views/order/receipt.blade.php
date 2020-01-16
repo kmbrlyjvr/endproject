@@ -2,6 +2,13 @@
 @section('container')
 
 <div class="defaultcontainer">
+
+    @if(session('status'))
+        <div class="status">
+            {{ session('status') }}
+        </div>
+    @endif
+
         <h2 class="title">RECEIPT</h2>
         
         <div class="receipt">
@@ -21,11 +28,6 @@
                         <tr>
                             <td>Trousers</td>
                             <td>Ryerson 001</td>
-                        </tr>
-
-                        <tr>
-                            <td>Colors</td>
-                            <td>002 Colors</td>
                         </tr>
                         <tr>
                             <td>SUBTOTAL</td>
@@ -49,8 +51,9 @@
                 <p>SALAMAT (THANK YOU) FOR YOUR PURCHASE!
                     <br>COPYRIGHT SINTA 2019 VIENNA AUSTRIA &
                     PHILIPPINES
-        
                 </p>
+
+                <a href="{{ route('home') }}">back to home</a>
             </div>
         
     

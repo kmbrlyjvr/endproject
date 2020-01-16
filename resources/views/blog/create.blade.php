@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('container')
 
 <div class="defaultcontainer">
@@ -10,11 +9,6 @@
 
 			<form class="add-blogpost"  action="{{ route('blog.store')}}" method="post" enctype="multipart/form-data">
 				@csrf
-						<br>
-						<div class="form-label-group">
-								<label for="img">Image</label><br>
-								<input type="file" name="img" id="img" class="">
-						</div>
 								<br>
 								<div class="form-label-group">
 									<label for="title">Title</label><br>
@@ -25,6 +19,15 @@
 								<div class="form-label-group">
 									<label for="text">Text</label><br>
 									<input type="text" name="text" id="text" class="">
+								</div>
+								<div class="form-label-group">
+										<label for="image">Hero</label><br>
+										<input type="file" name="image" id="image" class="">
+								</div>
+								<br>
+								<div class="form-label-group">
+										<label for="image">Image</label><br>
+										<input type="file" name="image" id="image" class="">
 								</div>
 						<br>
 						<div class="form-label-group"><br>

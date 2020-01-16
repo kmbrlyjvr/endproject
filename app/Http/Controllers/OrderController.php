@@ -13,9 +13,10 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('order.index');
+        $order = $request->session()->get('order', []);
+        return view('order.index', ['order' => $order]);
     }
 
     /**
@@ -25,19 +26,12 @@ class OrderController extends Controller
      */
     
     public function orderTrouser(Request $request)
-    {
-        $data = [];
-        $data ['config'] = json_encode($request->get('config', [] ));
-        $data ['title'] = "Order";
-
-        $data['user_id'] = \Auth::user()->id;
-
-        $order = Orders::create($data);
+    {   
+        $request->session()->put('order', $request->get('config', [] ));
 
         return [
-            'success' => $order != null, 
-            'order' => $order
-    ];        
+            'success' => true 
+        ];        
     }
     /**
      * Store a newly created resource in storage.
@@ -46,9 +40,9 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function renderSlack(Request $request, Orders $order)
+    public function renderTrouser(Request $request, Orders $order)
     {   
-        return view('svg.renderSlackSvg', ['config' => json_decode($order->config)]);
+        return view('svg.renderTrouserSvg', ['config' => json_decode($order->config)]);
     }
 
     public function renderUtility(Request $request, Orders $order)
@@ -61,6 +55,29 @@ class OrderController extends Controller
         return view('svg.renderOverallSvg', ['config' => json_decode($order->config)]);
     }
 
+    public function renderSvgSession(Request $request)
+    {   
+        $config = $request->session()->get('order', []);
+        $view = "";
+        $type = isset($config["type"]) ? $config["type"] : null;
+
+        switch($type) {
+            case "trouser":    
+            $view = "svg.renderTrouserSvg";
+            break;
+
+            case "utility":    
+            $view = "svg.renderUtilitySvg";
+            break;
+
+            case "overall":    
+            $view = "svg.renderOverallSvg";
+            break;
+        }   
+
+        return response()->view($view, ['config' => (object)$config])->header('Content-Type', 'image/svg+xml');
+
+    }
 
     /**
      * Display the specified resource.
@@ -82,33 +99,24 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function receipt()
+    public function receipt(Request $request)
     {
+        $config = $request->session()->get('order', []);
+
+        $data = [];
+        $data ['config'] = json_encode($config);
+        $data ['title'] = "Order";
+        $data['user_id'] = \Auth::user()->id;
+        $data['user_name'] = \Auth::user()->name;
+        $message = "Order Successful!";
+        $order = Orders::create($data);
+        
+        if(!$order) {
+            $message = "failed!";
+        }
+
+        $request->session()->flash('status', $message);
+        
         return view ('order.receipt');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    
-    public function destroy($id)
-    {
-        //
     }
 }

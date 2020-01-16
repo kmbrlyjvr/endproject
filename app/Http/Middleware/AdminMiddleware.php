@@ -16,12 +16,17 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-       /* if(Auth::user()->user_group == 1)
+        /*if(Auth::user()->user_group == 1)
         {
             return $next($request);
 
         } else {
-            return redirect('/admin.index');
+            return redirect('/admin');
         }*/
+        /*
+        if (Auth::check() && Auth::user()->user_group == 1) {
+            return $next($request);
+        }
+        abort(404);*/
     }
 }

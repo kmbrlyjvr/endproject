@@ -33,14 +33,13 @@
                     
                     </ul>
                 </div>
-                
+            <div class="help_button" style="color:var(--main);"><a href="{{ route('help') }}">help</a></div>
+
         @include('partials.alerts')
         @yield('container')
     </div>
 
     @include('partials.navbar')
-
-    <!--<script src="{{ mix('js/app.js') }}"></script>-->
 
 @stack('scripts')
 </body>

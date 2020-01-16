@@ -14,9 +14,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        
 
-        return view('admin.index', ['users' => $users]);
+        return view('admin.index');
     }
 
     /**
@@ -56,9 +56,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function blogpost()
     {
-        //
+        return view('admin.blogpost');
     }
 
     /**

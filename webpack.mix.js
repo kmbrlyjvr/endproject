@@ -19,8 +19,8 @@ mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .setResourceRoot('sinta/public')
    .scrollmagicGSAP('public/js')
-   .extract(['vue', 'axios']);
-
+   .extract(['vue', 'axios'])
+   .sourceMaps();
 
 
 /*mix.copy('resources/svgs', 'public/svgs/');*/

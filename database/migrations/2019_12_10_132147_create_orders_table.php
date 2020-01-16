@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('user_id');
+            $table->string('user_name');
             $table->json('config')->nullable();
             $table->timestamps();
         });

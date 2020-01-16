@@ -201,12 +201,12 @@
 <style lang="scss">
 
       :root {
-      --var-overall-color: #b48f80;
-      --var-pocket-color: #282618;
+      var-overall-color: #b48f80;
+      var-pocket-color: #282618;
       }
 
       .cls3-1 {
-        fill: var(--var-overall-color);
+        fill: var(var-overall-color);
       }
 
       .cls3-1, .cls3-2 {
@@ -223,7 +223,7 @@
       }
 
       .cls3-3, .cls3-4 {
-        fill: var(--var-pocket-color);
+        fill: var(var-pocket-color);
         stroke: #fff;
       }
 
@@ -231,16 +231,6 @@
         stroke-width: 0.5px;
       }
     </style>
-
-
-
-
-
-
-
-
-
-
 -->
 
 

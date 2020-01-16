@@ -13,7 +13,7 @@ class Blog extends Model
 
     protected $table = "blogs";
 
-    protected $fillable = ['title', 'text'];
+    protected $fillable = ['title', 'text', 'hero', 'imagetwo', 'imagethree', 'imagefour'];
 
     protected $visible = ['id', 'title', 'user', 'is_published'];
     
