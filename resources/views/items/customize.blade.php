@@ -19,6 +19,6 @@
             <generator-component></generator-component>
         </div>
 <div>
-
+    
 @endsection
      

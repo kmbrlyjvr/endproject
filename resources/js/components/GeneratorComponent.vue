@@ -26,6 +26,14 @@
                        </li>
                 </ul>
 
+            <!-- Color Picker -->
+            <h2 class="pick-color">or individual pocket color</h2>
+                <input type="color" list="presetColors" v-model="config.pocketColor" />
+                    <datalist id="presetColors">
+                        <option>#ceb7a6</option>
+                        <option>#f3f1a0</option>
+                    </datalist>
+
             <!-- Logo Color -->
             <h2 class="pick-color">4. Logo Color</h2>
                 <ul class="colors-3">
@@ -44,10 +52,11 @@
                     </select>
                 </label>
 
-            <!-- Change Pocket -->
-            <h2 class="pick-color">6. Change pocket</h2>
+            <!--  PRICE  -->
+            <h2 class="pick-color">Price 0,00€</h2>
+            <p>(Colors are included in the price)</p>
             
-            <button type="submit" class="savebtn">Done</button>
+            <button type="submit" class="button" style="color:#f1e1d8;" >Done</button>
         </form>
         </div> <!-- custom -->
     </div><!-- custom nav -->
@@ -55,11 +64,12 @@
 
 <div class="trouser">
     <div class="trousers trousers-1">
-        <svg-component :config="config" :type="type"></svg-component>
+            <svg-component :config="config" :type="type"></svg-component>
     </div>
 </div>
 
 </div>
+
 </template>
 
 
@@ -82,8 +92,9 @@ export default {
 
             config: {
                 colorPicker: null,
-                trouserColor: "#6e503d",
+                trouserColor: "#614a45",
                 utilityColor: "#ceb7a6",
+                overallColor: "#ceb7a6",
                 pocketColor: "#6e503d",
                 logoColor: "#f3f1a0",
                 pocketChange: null,
@@ -151,6 +162,7 @@ export default {
                 'colorPicker': this.config.colorPicker,
                 'trouserColor': this.config.trouserColor,
                 'utilityColor': this.config.utilityColor,
+                'overallColor': this.config.overallColor,
                 'pocketColor': this.config.pocketColor,
                 'logoColor': this.config.logoColor,
                 'type': this.type

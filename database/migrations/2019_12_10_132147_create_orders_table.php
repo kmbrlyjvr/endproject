@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('title');
             $table->string('user_id');
             $table->string('user_name');
+            $table->string('payment');
             $table->json('config')->nullable();
             $table->timestamps();
         });

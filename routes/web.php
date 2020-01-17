@@ -19,8 +19,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact.index');
 Route::get('/receipt', 'OrderController@receipt')->name('order.receipt');
-Route::get('/admin', 'AdminController@index')->name('admin.index');
-Route::get('/admin/blogpost', 'AdminController@blogpost')->name('admin.blogpost');
+
+Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
+
+    Route::get('', 'AdminController@index')->name('index');
+    Route::get('/users', 'AdminController@users')->name('users');
+    Route::get('/blogpost', 'AdminController@blogpost')->name('blogpost');
+    Route::get('/blogpost/uploadImgs', 'AdminController@uploadImgs')->name('uploadImgs');
+    Route::get('/blog/upload', 'AdminController@upload')->name('upload');
+    Route::get('/blog/create', 'AdminController@create')->name('create');
+    Route::post('/blog', 'AdminController@store')->name('store');
+    Route::get('/blog/{id}/edit', 'AdminController@edit')->name('edit');
+    Route::put('/blog/{id}', 'AdminController@update')->name('update');
+    Route::delete('/blog/{id}', 'AdminController@destroy')->name('destroy');
+
+});
 
 
 /*Route::group(['middleware' => ['auth', 'admin']], function(){
@@ -45,13 +58,6 @@ Route::get('/items', 'ItemsController@index')->name('items.index');
 Route::get('/help', 'HomeController@help')->name('help');
 Route::get('/profile/{user}', 'ProfileController@profile')->name('profile');
 Route::get('/{user}', 'ProfileController@show')->name('show');
-
-Route::get('/blog/upload', 'BlogController@upload')->name('upload');
-Route::get('/blog/create', 'BlogController@create')->name('create');
-Route::post('', 'BlogController@store')->name('store');
-Route::get('/blog/{id}/edit', 'BlogController@edit')->name('edit');
-Route::put('/blog/{id}', 'BlogController@update')->name('update');
-Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');
 
 Route::get('/customize/{item}', 'ItemsController@customize')->name('customize');
 Route::get('/{item}', 'ItemsController@show')->name('show');

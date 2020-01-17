@@ -23,7 +23,7 @@
                 <img src="imgs/logo_transparent.svg">
                 <img src="imgs/logo_transparent.svg">
                 <img src="imgs/logo_transparent.svg">
-            </div><br>
+        </div><br>
 
     <div class="aboutinfos">
 
@@ -39,7 +39,7 @@
                  A factory we are working with, situated in Binh Duong just an hour away from Ho Chi Minh 
                  City, is owned by Minh Duc Nguyen, a 22 year old design student with dreams of being a 
                  haute couture fashion designer. His family built a workshop next to their house, that 
-                 he later turned in to a small factory. He has 3 seamstresses working for him, that are also able to sew clothes in the comfort of their homes. Such a small factory can only produce a reasonable amount of clothing and since DANG STHLM values quality, sustainability and ethical production - slow fashion is the perfect way to express it.
+                 he later turned in to a small factory. He has 3 seamstresses working for him, that are 
                   </p>
         </div>
         <!-- Sustainability -->

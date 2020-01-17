@@ -2,11 +2,11 @@
     $config = $config ?? new stdClass();
 @endphp
 
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.3 277.89">
+<svg id="Layer_1" class="overall" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.3 277.89" alt="overall">
     <defs>
       <style>
         .cls-1 {
-          fill: {{ $config->overallColor }};
+          fill: {{ $config->trouserColor }};
         }
   
         .cls-1, .cls-2 {
@@ -23,8 +23,8 @@
         }
   
         .cls-3, .cls-4 {
-          fill: fill: {{ $config->pocketColor }};
-          stroke: #fff;
+          fill: {{ $config->pocketColor }};
+          stroke: #231f20;
         }
   
         .cls-4 {

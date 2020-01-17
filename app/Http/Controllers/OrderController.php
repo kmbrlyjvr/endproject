@@ -58,6 +58,7 @@ class OrderController extends Controller
     public function renderSvgSession(Request $request)
     {   
         $config = $request->session()->get('order', []);
+
         $view = "";
         $type = isset($config["type"]) ? $config["type"] : null;
 
@@ -74,6 +75,7 @@ class OrderController extends Controller
             $view = "svg.renderOverallSvg";
             break;
         }   
+
 
         return response()->view($view, ['config' => (object)$config])->header('Content-Type', 'image/svg+xml');
 
@@ -105,7 +107,7 @@ class OrderController extends Controller
 
         $data = [];
         $data ['config'] = json_encode($config);
-        $data ['title'] = "Order";
+        $data ['title'] = "";
         $data['user_id'] = \Auth::user()->id;
         $data['user_name'] = \Auth::user()->name;
         $message = "Order Successful!";

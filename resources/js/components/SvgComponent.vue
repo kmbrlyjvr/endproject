@@ -1,7 +1,7 @@
 <template>
 <div>
     
-   <svg v-if="type=='trouser'" id="Layer_1" class="trouser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.52 284.47"  alt="trousers slack" :style="svgStyleProps">
+   <svg v-if="type=='trouser'" id="Layer_1" class="trouser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.52 284.47" :style="svgStyleProps">
 
             <title>trousers slacks</title>
             <g v-bind:style="{ 'stroke': config.trouserColor}">
@@ -209,7 +209,8 @@ export default {
                 "--var-trouser-color": this.config.trouserColor,
                 "--var-pocket-color": this.config.pocketColor,
                 "--var-utility-color": this.config.utilityColor,
-                "--var-logo-color": this.config.logoColor
+                "--var-logo-color": this.config.logoColor,
+                "--var-overall-color": this.config.overallColor
             }
         }
     },

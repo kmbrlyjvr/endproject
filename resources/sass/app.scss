@@ -4,6 +4,7 @@
 :root {
   --main: #f1e1d8;
   --nude: #b38383;
+  --black: #231f20;
 }
 
 * {
@@ -118,6 +119,13 @@ a:hover {
   color: white;
 }
 
+.loginlogo {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main);
+  opacity: 0.5;
+}
+
 .user li{
    list-style: none;
    color: var(--main);
@@ -150,8 +158,16 @@ footer ul {
 
 footer a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
+
+footer a:active {
+  color: var(--nude);
+}
+
+/*footer a:hover {
+  background: var(--nude);
+}*/
 
 footer {
   position: fixed;
@@ -165,8 +181,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   background: #fff;
+  color: var(--main);
   opacity: 0.9;
-  z-index: 1;
+  z-index: 9;
   transition: bottom .5s ease-in-out;
 }
 
@@ -240,7 +257,7 @@ footer a.active {
 .aboutlogo {
   display: flex;
   position: absolute;
-  z-index: 7;
+  z-index: 3;
   margin: -5vh 0;
 }
 
@@ -254,7 +271,7 @@ footer a.active {
 }
 
 .aboutproduction p {
-  color: black;
+  color: var(--black);
 }
 
 .aboutsustain {
@@ -262,7 +279,7 @@ footer a.active {
 }
 
 .aboutsustain p {
-  color: black;
+  color: var(--black);
 }
 
 /* ##### HELP ##### */
@@ -320,7 +337,7 @@ footer a.active {
 
 /* ##### FORMS ##### */
 
-.formcontainer  {
+/*.formcontainer  {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -329,82 +346,135 @@ footer a.active {
   text-align: center;
   border-radius: 20px;
   opacity: 4;
+}*/
+
+.formcontainer {
+  display: flex;
+  margin: -80px 0;
+  background-color: var(--main);
+  grid-column-start: 6;
+  text-align: center;
+  border-radius: 20px;
+  opacity: 4;
 }
 
-.formlogreg {
-  margin: 50vh 0 0 0;
+.formcontainer img {
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+  width: 100%;
+  opacity: 0.8;
 }
 
-.formcontainer h5 {
+
+/*.formlogreg form {
+  position: absolute;
+  width: 100%;
+}*/
+
+
+.formcontainer h2 {
+  position: absolute;
   font-size: 30px;
 }
 
 .formcontainer .row {
+  color: white;
   line-height: 3;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  width: 400px;
+  height: 500px;
+  margin: 25vh 65vh 0; 
+  background-color: #ceb7a6;
+  opacity: 0.8;
+}
+
+.formcontainerlogin {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  margin: 150px 0;
+  border-radius: 20px;
+  opacity: 4;
+}
+
+
+.formcontainerlogin .row {
+  color: var(--black);
+  line-height: 3;
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  align-content: center;
+  width: 400px;
+  height: 500px;
+  text-align: center;
+}
+
+.form-label-group2 {
+  color: var(--black);
+}
+
+
+.form-label-group2 input {
+  width: 200px;
+  line-height: 1;
+  color: var(--black);
+  border: 0.5px solid transparent;
+  border-bottom: 1px solid var(--black);
+  background-color: transparent;
 }
 
 .form-label-group {
-  color: black;
-}
-
-
-.regformcontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 580px;
-  margin: 120px 0;
-  grid-column-start: 6;
-  text-align: center;
-  border-radius: 20px;
-  opacity: 4;
-}
-
-.successregformcontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 30ww0px;
-  margin: 120px 0;
-  grid-column-start: 6;
-  text-align: center;
-  border-radius: 20px;
-  opacity: 4;
-  /*background-color: #fff;*/
-}
-
-.regformcontainer h5 {
-  font-size: 30px;
-}
-
-.regformcontainer .row {
-  line-height: 3;
+  color: white;
 }
 
 .form-label-group input {
   width: 200px;
   line-height: 1;
-  color: black;
-  border: 0.5px solid #fff;
-  border-bottom: 1px solid black;
+  color: var(--black);
+  border: 0.5px solid transparent;
+  border-bottom: 1px solid var(--black);
+  background-color: transparent;
+}
+
+.form-group select {
+  background-color: transparent;
+  border: 1px solid white;
 }
 
 /*.form-label-group input[type=text] {
   height: 100px;
 }*/
 
-.regformcontainer label {
-  color: #fff;
-}
-
 button {
   cursor: pointer;
-  width: 300px;
   outline: none;
-  color: black;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 20px;
+  color: white;
+  background-color: transparent;
+  border: none;
+ /* border-radius: 20px;*/
+}
+
+.button {
+  font-family: 'Racing Sans One', cursive;  
+  font-size: 30px;
+  color: var(--main);
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background: var(--nude);
 }
 
 .logreg p{
@@ -412,6 +482,7 @@ button {
   text-align: center;
 }
 
+/* ##### TROUSERSCONTAINER ##### */
 .trouserscontainer {
   display: flex;
   justify-content: center;
@@ -423,9 +494,13 @@ button {
   left: 0;
 }
 
-
 .trousers {
   width: 15em;
+}
+
+.trouser {
+  width: 15em;
+  margin: 0 25vh 0;
 }
 
 .trouser-1 .trouser-2 .trouser-3 {
@@ -448,6 +523,7 @@ button {
 .trouserscontainer2 {
   display: flex;
   justify-content: space-around;
+  margin: 10vh 0;
 }
 
 .custom_nav {
@@ -612,8 +688,8 @@ button {
   font-weight: bold;
 }
 
-.recept img {
-  width: 10em;
+.receipt img {
+  width: 20em;
 }
 
 .receipt {
@@ -621,17 +697,79 @@ button {
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 200px;
+  width: 300px;
   margin: 15vh 0 0 70vh;
 }
 
+.receiptsmall td {
+  width: 250px;
+  line-height: 2;
+}
+
+.receiptsmall, .summarytable th, td {
+  border-bottom: 1px solid #ddd;
+}
+
+.summarytable td {
+  width: 150px;
+  line-height: 2;
+}
+
+/*.summaryimage{
+  width: 200px;
+}*/
+
+
+.svgrenderorder {
+  margin: 5vh;
+  height: 600px;
+}
+
+.img-magnifier-container {
+  position: relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 1px solid #f1e1d8;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 200px;
+  height: 200px;
+}
+
+/*.summary {
+  display: flex;
+  //flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}*/
+
 .summary {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.summarytable {
+  display: flex;
   flex-wrap: wrap;
-  width: 200px;
-  margin: 15vh 0 0 70vh;
+  align-items: center;
+  width: 600px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  height: 600px;
+  line-height: 1.5;
+  padding: 80px 0;
 }
 
 .orderlogin li{
@@ -751,7 +889,7 @@ position: absolute;
 }
 
 /* ##### MEDIA QUERIES ##### */
-
+/*
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -786,8 +924,19 @@ position: absolute;
   font-size: 2.5em;
 }
 
-.formcontainer h5 {
-  font-size: 2em;
+.formcontainer {
+  display: flex;
+  justify-content: flex-start;  
+  margin: -80px 0;
+  background-color: var(--main);
+}
+
+.formcontainer img {
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+  width: 100%;
 }
 
 button {
@@ -802,10 +951,10 @@ textarea {
 
 textarea::placeholder {
   font-size: 30px;
-}
+} */
 
 /* ##### TROUSERS CUSTOMIZATION ##### */
-
+/*
 .trouserscontainer2 {
   display: flex;
   justify-content: space-around;
@@ -934,4 +1083,4 @@ footer .logo img {
   margin: 0 20px 0 40px;
 }
   
-}
+}*/

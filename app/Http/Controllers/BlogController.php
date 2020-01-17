@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\User;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -24,14 +25,17 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function create(Request $request)
-    {
-        $blog = new Blog;
 
-        return view('blog.create', compact('blog'));
+    public function show($type)
+    {
+        $imgs = \Storage::disk('public')->files($type);
+        return view('blog.show', [
+            'imgs' => $imgs,
+            'type' => $type,
+        ]);
     }
 
-    
+
   /* public function upload(Request $request)
     {
         if (!empty($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
@@ -58,7 +62,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $blog = new Blog();
 
@@ -107,52 +111,4 @@ class BlogController extends Controller
     }
 */
     
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Blog $blog)
-    {
-        $blog = Blog::findOrFail($id);
-
-        return view('blog.edit', compact('blog'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Blog $blog)
-    {
-        $this->validate($request, [
-            'title' => 'required|string|min:3|max:192',
-            'text' => 'required|string|between:2,140',
-            'img' => 'required',
-        ]);
-        
-        $blog->fill($request->all());
-        $blog->is_published = $request->has('is_published');
-        $blog->save();
-
-        return redirect()->route('blog.index', $blog->id)->with('success', 'Blog updated!');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Blog $blog)
-    {
-        $blog->delete();
-
-        return redirect()->route('blog.index')->with('success', 'Blogpost deleted!');
-    }
 }

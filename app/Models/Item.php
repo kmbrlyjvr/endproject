@@ -13,7 +13,7 @@ class Item extends Model
 
     protected $fillable = ['title', 'text'];
 
-    protected $visible = ['title', 'text', 'svg'];
+    protected $visible = ['title', 'text'];
 
 
 }

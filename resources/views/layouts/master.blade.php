@@ -42,6 +42,7 @@
     @include('partials.navbar')
 
 @stack('scripts')
+
 </body>
 </html>
 

@@ -4,13 +4,13 @@
 
 @section('container')
 
+<div class="defaultcontainer">
+		<h2 class="title">sign up and sit down</h2>
+
 	<div class="formcontainer">
+		<img src="designers/signup.jpg" alt="people sitting and drinking" />
 		<div class="row">
-			<div class="formlogreg">
-			<h5 class="formtitle">Sign up</h5>
-
 				<form action="{{ route('auth.postSignup') }}" method="post" autocomplete="off">
-
 					@csrf
 
 					<div class="form-group">
@@ -78,14 +78,12 @@
 						</div>
 					</div>
 
-					<button type="submit" class="btn btn-primary">Sign up</button>
+					<button class="button" type="submit" class="btn btn-primary">Sign up</button>
 					<p>Already a member? <a href="{{ route('auth.login') }}">Login</a></p>
 
 				</form>
 			</div>
-			</div>
-
-		</div>
 	</div>
+</div>
 
 @endsection

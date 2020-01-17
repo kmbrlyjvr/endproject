@@ -2,7 +2,8 @@
     $config = $config ?? new stdClass(); 
 @endphp
 
-<svg id="Layer_1" class="trouser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.52 284.47"  alt="trousers slack">
+
+<svg id="Layer_1" class="trouser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 300"  alt="trousers slack">
     <defs>
             <style>
                 .cls1-1 {

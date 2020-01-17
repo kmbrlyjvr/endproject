@@ -3,14 +3,16 @@
 
 <div class="defaultcontainer">
 
-    @if(session('status'))
+
+
+     <h2 class="title">RECEIPT</h2>
+        
+        @if(session('status'))
         <div class="status">
             {{ session('status') }}
         </div>
-    @endif
+        @endif
 
-        <h2 class="title">RECEIPT</h2>
-        
         <div class="receipt">
                 <img src="/svgs/logo.svg">
                 <p>sinta vienna</p>

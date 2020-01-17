@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('container')
 
-<!--<h2>Upload new designers project</h2>-->
-
 <div class="defaultcontainer">
 
     <h2 class="title">Welcome Admin</h2>
