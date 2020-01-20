@@ -6,17 +6,17 @@
 
 
      <h2 class="title">RECEIPT</h2>
-        
-        @if(session('status'))
-        <div class="status">
-            {{ session('status') }}
-        </div>
-        @endif
+ 
 
         <div class="receipt">
                 <img src="/svgs/logo.svg">
-                <p>sinta vienna</p>
                <div class="receiptsmall"> 
+                          
+        @if(session('status'))
+        <div class="status" style="visibility:hidden;">
+            {{ session('status') }}
+        </div>
+        @endif
                 <table>
                     <tbody>
                         <tr>
@@ -50,12 +50,12 @@
                     </tbody>
                 </table>
         
-                <p>SALAMAT (THANK YOU) FOR YOUR PURCHASE!
-                    <br>COPYRIGHT SINTA 2019 VIENNA AUSTRIA &
-                    PHILIPPINES
-                </p>
+                <p style="color:var(--main); text-align:center;">
+                        <span style="font-size: 12px; text-align:center; color:var(--black); text-transform:uppercase;">© 2018 Sinta Philippines/Austria</span>
+                        <br><span class="highlightnude">SALAMAT (THANK YOU) FOR YOUR PURCHASE!</span>
 
-                <a href="{{ route('home') }}">back to home</a>
+                </p>
+                <a class="button" href="{{ route('home') }}">back to home</a>
             </div>
         
     

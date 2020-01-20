@@ -16,6 +16,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = "user";
+
     protected $fillable = [
         'name', 'email', 'password', 'adress', 'zip', 'country'
     ];
@@ -46,6 +48,11 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->user_group  == 1;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('User');
     }
 
     /*public function generateApiToken(): self

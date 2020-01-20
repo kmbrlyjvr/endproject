@@ -13,30 +13,24 @@
             You are able to change either color, material, buttons or >the trousers' pocket. <br>
             All trousers are made for women aswell as for men.</p>
         </div>
-
 </div>
 
        
 
-    <section class="home-3">
-        <h3>How to <br>use it</h3>
-    </div>
+<div class="generator">
+        <h2 class="title3">How to use it</h2>
 
-            <div class="how">
-                <div class="left">
-                     <p>1. Choose Trouser</p>
-                     <img style="width: 45vh;"src="imgs/howto_trouserbw.svg">
-                </div>
-                <div class="right">
-                        <p>2. Trouser / Pocket / Logo Color</p>
-                        <img style="width: 50vh;"src="imgs/howto_customizetrouser.svg">
-   
-                     <p>5. Select Size</p>
-                     <p>6. Order and rock it</p>
-                     <img style="width: 50vh;"src="imgs/howto_buy.svg">
-                </div>
-            </div>
-      </section>
+    <div class="instructions">
+
+            <p><span class="highlightnude">1. Choose Trouser</span></p>
+            <img style="width: 45vh;"src="imgs/howto_trouserbw.svg">
+            <p><span class="highlightnude">2. Trouser / Pocket / Logo Color</span></p>
+            <img style="width: 50vh;"src="imgs/howto_customizetrouser.svg">
+            <p><span class="highlightnude">5. Select Size</span></p>
+            <p><span class="highlightnude">6. Order and rock it</span></p>
+            <img style="width: 50vh;"src="imgs/howto_buy.svg">
+    </div>
+</div>
 
 
 <div class="homecontainer">

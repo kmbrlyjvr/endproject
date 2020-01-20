@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
+use Illuminate\Foundation\Auth\AuthenticatesUser;
+
 
 class AuthController extends Controller
 {
@@ -18,6 +20,7 @@ class AuthController extends Controller
             return view('home');
         }
     }*/
+
 
     public function login()
     {
@@ -64,7 +67,7 @@ class AuthController extends Controller
         $this->validate($request, [
 
             'name' => 'required|min:2',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:user,email',
             'password' => 'required|confirmed|min:8',
             'adress' => 'required|min:5',
             'zip' => 'required|min:2',
@@ -76,7 +79,7 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route('home')->with('success', 'Welcome');
+        return redirect()->route('home');
     }
  
 }

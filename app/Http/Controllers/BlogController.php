@@ -13,27 +13,73 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function index()
     {
         return view('blog.index');
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function create()
+    {
+        $blog = new Blog;
+
+        return view('blog.create', compact('blog'));
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required|string|min:3max:192',
+            'text' => 'required|string|between:2,140',
+        ]);
+
+        $blog = new Blog();
+        $blog->fill($request->all());
+        $blog->is_published = $request->has('has_published');
+        $blog->save();
+
+        return redirect()->route('blog.show', $blog->id)->with('success', 'Blog created');
+    }
+
+    public function show(Blog $blog)
+    {
+        return view('blog.show', compact('blog'));
+    }
+
+    public function edit(Blog $blog)
+    {
+        return view('blog.edit', compact('blog'));
+    }
+
+    public function update(Request $request, Blog $blog)
+    {
+        $this->validate($request, [
+            
+            'title' => 'required|string|min:3|max:192',
+            'text' => 'required|string|between:2,140',
+        ]);
+
+        $blog->fill($request->all());
+        $blog->is_published = $request->has('is_published');
+        $blog->save();
+
+        return redirect()->route('blog.show', $blog->id)->with('success', 'Blog updated');
+    }
+
+    public function destroy (Blog $blog)
+    {
+        $blog->delete();
+        return redirect()->route('blog.index')->with('success', 'Blog has been deleted');    }
 
 
-    public function show($type)
+   /* public function show($type)
     {
         $imgs = \Storage::disk('public')->files($type);
         return view('blog.show', [
             'imgs' => $imgs,
             'type' => $type,
         ]);
-    }
+    }*/
 
 
   /* public function upload(Request $request)

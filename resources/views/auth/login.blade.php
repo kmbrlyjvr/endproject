@@ -26,8 +26,7 @@
                             <input type="password" class="form-control" name="password" required>
                         </div>
                     </div>
-                    <button class="button" type="submit" class="btn btn-primary">Login</button>
-                </form>
+                <button class="button" type="submit" class="btn btn-primary">Login</button>
                 <p>Not a member yet? <a href="{{ route('auth.signup') }}">Sign Up</a></p>
         </div>
     </div>

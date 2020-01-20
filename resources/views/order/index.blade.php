@@ -64,10 +64,14 @@
                 </tr>
                 <tr>
                     <td>    @if(auth()->check())
-                            <a href="{{ route('order.receipt') }}">Order now</a>
+                            <a class="button" href="{{ route('order.receipt') }}">Order</a>
                             @else
+                            <p> Please
                              <a href="{{ route('auth.login')}}">login</a>
+                             or
                              <a href="{{ route('auth.signup')}}">sign up</a>
+                             to complete your order
+                            </p>
                             @endif</td>
                 </tr>
             </tbody>

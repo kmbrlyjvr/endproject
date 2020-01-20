@@ -19,7 +19,7 @@
                 
                     @if(auth()->check())
                     <li class="user" style="color:var(--main);">
-                            Hi, <a class="highlightnude" href="">{{ auth()->user()->name }}</a>
+                            Hi, <a class="highlightnude" href="{{ route('profile') }}">{{ auth()->user()->name }}</a>
                     </li>
 
                     <li class="userlogout">
@@ -33,16 +33,19 @@
                     
                     </ul>
                 </div>
-            <div class="help_button" style="color:var(--main);"><a href="{{ route('help') }}">help</a></div>
+            <div class="help_button" style="color:var(--main);"><a href="/help">help</a></div>
 
-        @include('partials.alerts')
         @yield('container')
     </div>
 
+    @include('partials.alerts')
     @include('partials.navbar')
 
 @stack('scripts')
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineLite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+        <script src="js/gsap.js"></script>
 </body>
 </html>
 

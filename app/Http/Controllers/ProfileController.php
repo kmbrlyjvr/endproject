@@ -4,19 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $users = User::all();
-        return view('profile.userprofile', ['users' => $users]);
-    }
 
     /**
      * Display the specified resource.
@@ -24,16 +16,23 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function profile(User $user)
-    {
-        return view('profile.userprofile', ['user' => $user]);
+
+    public function profile()
+    {   
+        $users = User::all();
+        return view('profile.userprofile', ['users' => $users]);
     }
 
+    /*
     public function show(User $user)
-    {
-        return view('profile.userprofile', ['user' => $user]);
+    {   
+        return view('profile.show', ['user' => $user]);
+    }*/
+    public function show(User $user)
+    {   
+        $user = User::with('profile')->findOrFail($id);
+        return view('profile.show', compact('user'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *

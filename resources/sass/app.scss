@@ -5,6 +5,8 @@
   --main: #f1e1d8;
   --nude: #b38383;
   --black: #231f20;
+  --main-font: 'Lekton', sans-serif;
+  --sec-font: 'Racing Sans One', cursive;  
 }
 
 * {
@@ -79,19 +81,8 @@ body {
 }*/
 
 
-.how {
-  display: flex;
-  flex-direction: column;
-}
 
-.left {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.right {
-  margin-left: auto;
-} 
+/* ##### defaults ##### */
 
 .loginreg {
   display: flex;
@@ -129,6 +120,19 @@ a:hover {
 .user li{
    list-style: none;
    color: var(--main);
+}
+
+.terms {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.termstext p{
+  color: var-(--black);
+  width: 100vh;
 }
 
 .userlogout {
@@ -208,12 +212,33 @@ footer a.active {
   color: #1e1e1e;  
 } 
 
+
+/* ##### GENERATOR INSTRUCTIONS ##### */
+
+.generator {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.instructions {
+  margin: 0 55vh 0;
+}
+
+.instructions p {
+  color: var(--main);
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
 /* ##### ABOUT ##### */
 
 .aboutcontainer {
   display: flex;
   justify-content: space-evenly;  
   margin: -80px 0;
+  height: 100vh;
 }
 
 .aboutcontainer img {
@@ -228,16 +253,16 @@ footer a.active {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
   width: 80vh;
   margin: 30vh 0;
 }
 
 .aboutpost h2 {
-  text-align:center;
   color: var(--main);
   text-transform:uppercase;  
-  font-family: 'Racing Sans One', cursive;  
-  font-size: 5em;
+  font-family: var(--sec-font);  
+  font-size: 3em;
 }
 
 .aboutpost p {
@@ -251,7 +276,13 @@ footer a.active {
   flex-direction: column;
   position: absolute;
   width: 100%;
-  background-color: var(--nude);
+  background-color: var(--main);
+  min-height: 285vh;
+}
+
+.productionimgs img{
+  width: 26vh;
+  border: 3px solid #b38383;
 }
 
 .aboutlogo {
@@ -267,7 +298,7 @@ footer a.active {
 
 .aboutproduction {
   width: 80vh;
-  margin: 20vh 0;
+  margin-top: 150px;
 }
 
 .aboutproduction p {
@@ -323,7 +354,13 @@ footer a.active {
   flex-direction: column;
   position: absolute;
   width: 100%;
+  margin-bottom: 10vh;
+  min-height: 100%;
+
 }
+
+
+/* ##### SHIPPING TABLE ##### */
 
 .shipping {
   width: 90vh;
@@ -331,9 +368,52 @@ footer a.active {
 }
 
 .shipping p {
-  color: white;
-  font-size: 1.5em;
+  color: var(--black);
+  font-size: 1em;
 }
+
+.shipping td {
+  width: 800px;
+}
+
+.shippingtable table {
+  width: 300vh;
+}
+
+.shippingtable table {
+  width: 500px;
+}
+
+.shippingtable td:first-child {
+  color:var(--nude);
+}
+
+.shippingtable  th, td {
+  padding: 15px;
+  text-align: left;
+  color: #51545f;
+}
+
+.shippingtable td:nth-child(1){
+  border-bottom: 1px solid var(--main-txt-color);
+}
+
+
+.shippingtable tr:nth-child(even) {
+  background-color: #fff;
+
+}
+
+.tableuserlist th {
+  background-color: #f2f2f2;
+  color: #51545f;
+}
+
+.tableorders th {
+  background-color: #f2f2f2;
+  color: #51545f;
+}
+
 
 /* ##### FORMS ##### */
 
@@ -516,6 +596,94 @@ button {
 	padding-bottom: 20px;
   font-weight: 700;
   color: var(--main);
+  text-transform: uppercase;
+}
+
+.title2 {
+  font-family: var(--sec-font);
+  color: var(--nude); 
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.title3 {
+  font-family: var(--sec-font);
+  color: var(--nude); 
+  font-size: 8em;
+  text-transform: uppercase;
+}
+
+.links a{
+  color: var(--nude);
+  text-decoration: underline;
+
+}
+
+.links a:hover {
+  color: var(--main);
+}
+
+
+/* ##### PROFILE ##### */
+
+.profilecontainer {
+  grid-column-start: 6;
+  font-family: var(--main-font);
+  color: #51545f;
+  font-size: 15px;
+  margin: 20vh;
+  text-align: center;
+}
+
+.profilecontainer  {
+  text-decoration: none;
+  color: var(--main-color);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.tableprofile {
+  display: flex;
+  justify-content: center;
+}
+
+.tableprofile td {
+  width: 300px;
+}
+
+.tableprofile tr {
+  width: 500px;
+}
+
+.tableprofile  td:first-child {
+  color: var(--nude);
+  width: 200px;
+}
+
+.tableprofile  th {
+  padding: 15px;
+  text-align: left;
+  color: #51545f;
+}
+
+.tableprofile  td {
+  padding: 15px;
+  text-align: left;
+  color: #51545f;
+}
+
+.tableprofile  td:nth-child(1){
+  border-bottom: 1px solid var(--main-txt-color);
+}
+
+.tableprofile  td:nth-child(2){
+  width: 500px;
+}
+
+
+.profilecontainer tr:nth-child(even) {
+  background-color: #fff;
 }
 
 /* ##### TROUSERS CUSTOMIZATION ##### */
@@ -688,6 +856,8 @@ button {
   font-weight: bold;
 }
 
+/* ##### RECEIPT #####*/
+
 .receipt img {
   width: 20em;
 }
@@ -699,6 +869,10 @@ button {
   flex-wrap: wrap;
   width: 300px;
   margin: 15vh 0 0 70vh;
+}
+
+.receipt p {
+  font-size: 20px;
 }
 
 .receiptsmall td {
