@@ -29,7 +29,7 @@
   <body><div class="area"></div><nav class="main-menu">
             <ul>
                 <li>
-                    <a href="">
+                    <a href="{{ route('home') }}">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             Home
@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('admin.index') }}">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             Admin
@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="{{ route('admin.users') }}">
                        <i class="fa fa-list fa-2x"></i>
                         <span class="nav-text">
                             Userslist
@@ -53,16 +53,16 @@
                     </a>
                     
                 </li>
-                <li class="has-subnav">
+               <!-- <li class="has-subnav">
                     <a href="#">
                        <i class="fa fa-folder-open fa-2x"></i>
                         <span class="nav-text">
                             Pages
                         </span>
                     </a>
-                </li>
+                </li>-->
                 <li>
-                    <a href="#">
+                    <a href="{{ route('blog.index') }}">
                         <i class="fa fa-font fa-2x"></i>
                         <span class="nav-text">
                            Blog

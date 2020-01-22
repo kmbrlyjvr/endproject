@@ -23,7 +23,7 @@
                     </table>
             @endforeach
 
-        <a href="{{ route('profile.edit') }}">Edit</a>
+        <a href="{{ route('profile.edit', $user->id) }}">Edit</a>
         <h2><span class="highlightnude">Orders</span></h2>
 
         <div class="table">
