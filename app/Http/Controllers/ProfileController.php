@@ -30,10 +30,9 @@ class ProfileController extends Controller
 
 
     
-    public function show($id)
+    public function show(User $user)
     {   
-        $user = User::findOrFail($id);       
-        return view('profile.show',['user' => $user]);
+        return view('profile.show', compact('user'));
     }
 
 
@@ -60,7 +59,6 @@ class ProfileController extends Controller
     {
         $this->validate($request, [
 
-   
             'name' => 'min:2',
             'email' => 'email|unique:user,email',
             'password' => 'confirmed|min:8',
@@ -72,7 +70,7 @@ class ProfileController extends Controller
         $user->fill($request->all());
         $user->save();
 
-        return redirect()->route('user.show', $user->id)->with('success', 'Blog updated!');
+        return redirect()->route('profile.show', $user->id)->with('success', 'Profile updated!');
 
     }
 

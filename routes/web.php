@@ -93,9 +93,9 @@ Route::post('/signup', 'AuthController@postSignup')->name('auth.postSignup')->mi
 
 
 Route::get('/profile', 'ProfileController@profile')->name('profile');
-Route::get('/{id}', 'ProfileController@show')->name('show');
-Route::get('/{user}/edit', 'ProfileController@edit')->name('edit');
-Route::get('/{user}', 'ProfileController@update')->name('update');
+Route::get('/{user}', 'ProfileController@show')->name('profile.show');
+Route::get('/{user}/edit', 'ProfileController@edit')->name('profile.edit');
+Route::get('/{user}', 'ProfileController@update')->name('profile.update');
 
 
 
