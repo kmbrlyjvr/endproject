@@ -277,7 +277,7 @@ footer a.active {
   position: absolute;
   width: 100%;
   background-color: var(--main);
-  min-height: 285vh;
+  margin-bottom: 100px;
 }
 
 .productionimgs img{
@@ -388,7 +388,13 @@ footer a.active {
   color:var(--nude);
 }
 
-.shippingtable  th, td {
+.shippingtable  th {
+  padding: 15px;
+  text-align: left;
+  color: #51545f;
+}
+
+.shippingtable td {
   padding: 15px;
   text-align: left;
   color: #51545f;

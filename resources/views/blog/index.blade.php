@@ -5,7 +5,7 @@
 <h2 class="title">blog</h2>
 
 <!-- RETURN (BACK) BUTTON -->
-<a href="{{ URL::previous() }}" class="back_button">Back</a> 
+<!--<a href="{{ URL::previous() }}" class="back_button">Back</a> -->
 
     <div class="blogcontainer">
         <div class="blogheroimage"><!-- aus der DB --><img src="designers/alealiblog.jpg" alt="girl and guy talking"></div>

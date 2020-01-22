@@ -79,22 +79,7 @@
                     from sourcing fabrics, materials, packaging and production.
                     <br>
                     <br>
-                    <span class="highlightnude">DEADSTOCK</span> 
-                    Each piece of our clothing is sourced sustainably. The first collection is entirely 
-                    made from deadstock materials, therefore each piece is limited in quantity since we 
-                    produce until the roll of fabric we've sourced is out.
-                    
-                    So what is deadstock? The same way thrifting is a sustainable way of shopping to 
-                    minimize waste as an end consumeer, sourcing deadstock is like thrifting for the 
-                    fashion industry. Deadstock fabric is waste or leftover fabrics from suppliers or f
-                    actories that no longer have use for them. Usually these rolls are thrown in landfills 
-                    and some brands even burn their leftover fabric. Since Vietnam is a huge exporter of fabrics, 
-                    it also means there's a vast amount of deadstock fabrics there. After a lot of research we 
-                    found a few fabric markets in Ho Chi Minh City specializing in purely deadstock. For future 
-                    collections SINTA will also look in to other alternatives of sustainable fabrics such as 
-                    tencel, econyl and organic cotton.
-                    <br>
-                    <br>
+                 
                     <span class="highlightnude">PACKAGING</span> 
                     All our products are shipped in recycled paper bags or recycled cardboard boxes. 
                     We've avoided plastics and have been researching other materials such as compostable ecomailers. 
@@ -117,7 +102,7 @@
                     Neubaugasse 26, 1060 <br>Vienna, Austria<br>
                     Mon-Sat 8am - 6pm
                 </p>
-                <p class="links"><a href="/terms">Term & Conditions</a></p>
+                <p class="links"><a href="/terms">Terms & Conditions</a></p>
             </div>
             <br>
             <br>

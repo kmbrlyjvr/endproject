@@ -37,6 +37,7 @@ Route::get('/generator', function() {
     return view('generator');
 });
 
+
 Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
 
     Route::get('', 'AdminController@index')->name('index');
@@ -54,8 +55,7 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
     Route::post('/blog', 'BlogController@store')->name('store');
     Route::get('/blog/{id}/edit', 'BlogController@edit')->name('edit');
     Route::put('/blog/{id}', 'BlogController@update')->name('update');
-    Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');
-    
+    Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');    
 });
 
 
@@ -71,6 +71,7 @@ Route::group(['middleware' => ['App\Http\Middleware\AdminMiddleware']], function
 Route::get('/blog', 'BlogController@index')->name('blog.index');
 
 
+
 Route::post('customize/orderTrouser', 'OrderController@orderTrouser')->name('orderTrouser');
 Route::get('/order/render/session.svg', 'OrderController@renderSvgSession')->name('order.renderSvgSession');
 Route::get('/order/render/{order}.svg', 'OrderController@render')->name('order.render');
@@ -78,16 +79,10 @@ Route::get('/order', 'OrderController@index')->name('order.index');
 Route::get('/order/{id}', 'OrderController@show')->name('order.show');
 Route::get('/receipt', 'OrderController@receipt')->name('order.receipt');
 
-
 Route::get('/items', 'ItemsController@index')->name('items.index');
-Route::get('/{item}', 'ItemsController@show')->name('show');
-
 
 Route::get('/customize/{item}', 'ItemsController@customize')->name('customize');
 Route::get('/svg/{file}.svg', 'SvgController@render')->name('svg.render');
-
-Route::get('/profile', 'ProfileController@profile')->name('profile');
-Route::get('/profile/{user}', 'ProfileController@show');
 
 
 Route::get('/login', 'AuthController@login')->name('auth.login')->middleware('guest');
@@ -95,6 +90,12 @@ Route::post('/login', 'AuthController@postLogin')->name('auth.postLogin')->middl
 Route::get('/logout', 'AuthController@logout')->name('auth.logout')->middleware('auth');
 Route::get('/signup', 'AuthController@signup')->name('auth.signup')->middleware('guest');
 Route::post('/signup', 'AuthController@postSignup')->name('auth.postSignup')->middleware('guest');
+
+
+Route::get('/profile', 'ProfileController@profile')->name('profile');
+Route::get('/{id}', 'ProfileController@show')->name('show');
+Route::get('/{user}/edit', 'ProfileController@edit')->name('edit');
+Route::get('/{user}', 'ProfileController@update')->name('update');
 
 
 

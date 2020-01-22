@@ -90,9 +90,9 @@
                                 </tr>
                             </table>
                             <br><br>
-                            We will do our best to ship your order within 24 hours of your purchase. Please note that it is not a guarantee since SINTA is still only an independent brand and may need 1-2 days for processing your order. 
+                            We will do our best to ship your order within 7 business days of your purchase. Please note that it is not a guarantee since SINTA is still only an independent brand and may need 7-9 days for your custom made item and processing your order. 
                             When ordering outside the EU (European Union) all prices exclude VAT/tax and duties and local custom fees may apply. Please contact your local customs office for further information.
-                            For more information about our shipping options, please visit our FAQ. Please note we do not refund shipping fees.
+                            For more information about our shipping options, please visit our <a href="/faqs">FAQs</a>. Please note we do not refund shipping fees.
                             If you have any comments or queries, please send an email to contact@sinta.ph, or write to us at the following address:
                         </span> 
                             <br><br>

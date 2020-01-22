@@ -17,31 +17,36 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function profile()
     {   
         $users = User::all();
-        return view('profile.userprofile', ['users' => $users]);
+        return view('profile.userprofile', ['users' => $users]);    
     }
 
-    /*
-    public function show(User $user)
+
+    
+    public function show($id)
     {   
-        return view('profile.show', ['user' => $user]);
-    }*/
-    public function show(User $user)
-    {   
-        $user = User::with('profile')->findOrFail($id);
-        return view('profile.show', compact('user'));
+        $user = User::findOrFail($id);       
+        return view('profile.show',['user' => $user]);
     }
+
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('profile.edit', compact('user'));
+
     }
 
     /**
@@ -51,19 +56,28 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->validate($request, [
+
+   
+            'name' => 'min:2',
+            'email' => 'email|unique:user,email',
+            'password' => 'confirmed|min:8',
+            'adress' => 'min:5',
+            'zip' => 'min:2',
+            'country' => 'min:2',
+       ]);
+
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect()->route('user.show', $user->id)->with('success', 'Blog updated!');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    public function getUserById($id)
+	{
+		return User::with('profile')->whereId($id)->firstOrFail();
+	}
 }
