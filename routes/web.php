@@ -91,14 +91,10 @@ Route::get('/logout', 'AuthController@logout')->name('auth.logout')->middleware(
 Route::get('/signup', 'AuthController@signup')->name('auth.signup')->middleware('guest');
 Route::post('/signup', 'AuthController@postSignup')->name('auth.postSignup')->middleware('guest');
 
-
 Route::get('/profile', 'ProfileController@profile')->name('profile');
 Route::get('/{user}', 'ProfileController@show')->name('profile.show');
 Route::get('/{user}/edit', 'ProfileController@edit')->name('profile.edit');
-Route::get('/{user}', 'ProfileController@update')->name('profile.update');
-
-
-
+Route::put('/{user}', 'ProfileController@update')->name('profile.update');
 
 Route::get('/imageUpload', 'ImageUploadController@imageUpload')->name('image.upload');
 Route::post('/imageUpload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');

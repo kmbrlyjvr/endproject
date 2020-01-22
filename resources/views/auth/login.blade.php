@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('title', 'Login')
-
 @section('container')
 
 <div class="defaultcontainer">

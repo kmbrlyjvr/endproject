@@ -110,7 +110,6 @@ class OrderController extends Controller
         $data = [];
         $data ['config'] = json_encode($config);
         $data ['title'] = "";
-        $data['user_id'] = \Auth::user()->id;
         $data['user_name'] = \Auth::user()->name;
         $message = "Order Successful!";
         $order = Orders::create($data);

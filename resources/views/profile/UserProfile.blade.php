@@ -26,31 +26,34 @@
         <a href="{{ route('profile.edit', $user->id) }}">Edit</a>
         <h2><span class="highlightnude">Orders</span></h2>
 
-        <div class="table">
-            <table>
+            <table class="tableorders">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Size</th>
+                        <th>Total (+ shipping)</th>
+                        <th>Address</th>
+                        <th>Payment</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+        
                 <tbody>
+                    @foreach($orders as $order)
                     <tr>
-                        <td>Product</td>
+                        <td>{{ $order->user_name}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td>Size</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>(+ shipping)</td>
-                    </tr>
-                    <tr>
-                        <td>Date</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
+        </div>
+        
         </div>
     </div>
 </div>

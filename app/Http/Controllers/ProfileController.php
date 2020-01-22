@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,8 @@ class ProfileController extends Controller
     public function profile()
     {   
         $users = User::all();
-        return view('profile.userprofile', ['users' => $users]);    
+        $orders = Orders::all();
+        return view('profile.userprofile', ['users' => $users], ['orders' => $orders]);    
     }
 
 

@@ -407,18 +407,20 @@ footer a.active {
 
 .shippingtable tr:nth-child(even) {
   background-color: #fff;
-
 }
 
-.tableuserlist th {
-  background-color: #f2f2f2;
-  color: #51545f;
+/* ##### TABLE PROFILE/USERSLIST/ORDERS + ADMIN ##### */
+
+.tableprofile, .tableorders {
+  display: flex;
+  justify-content: center;
 }
 
-.tableorders th {
-  background-color: #f2f2f2;
-  color: #51545f;
+.tableorders, .tableprofile th {
+  color: var(--nude);
+  background-color: #ceb7a6;
 }
+
 
 
 /* ##### FORMS ##### */
