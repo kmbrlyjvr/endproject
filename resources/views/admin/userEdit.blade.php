@@ -11,91 +11,78 @@
     @stack('head')
 </head>
 
-   <body>
-       <div class="area">      
-            <h2 class="title2">Welcome,<br>admin  </h2>
-        </div>
-        
-       <nav class="main-menu">
-            <ul>
-                <li>
-                    <a href="{{ route('home') }}">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">
-                            Home
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.index') }}">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">
-                            Admin
-                        </span>
-                    </a>
-                </li>
-                <li class="has-subnav">
-                    <a href="{{ route('admin.users') }}">
-                    <!--   <i class="fa fa-list fa-2x"></i> -->
-                    <i class="fa fa-user fa-2x"></i>                        
-                        <span class="nav-text">
-                            Userslist
-                        </span>
-                    </a>
-                </li>
-                <li class="has-subnav">
-                    <a href="{{ route('admin.orders') }}">
-                    <i class="fa fa-truck fa-2x"></i>                        
-                    <span class="nav-text">
-                            Orders
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.blogpost') }}">
-                        <i class="fa fa-font fa-2x"></i>
-                        <span class="nav-text">
-                           Blog
-                        </span>
-                    </a>
-                </li>
-                 <!-- <li>
-                 <a href="#">
-                       <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">
-                            Tables
-                        </span>
-                    </a>
-                </li>-->
-           <!--     <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            To-Do
-                        </span>
-                    </a>
-                </li>-->
-            </ul>
+ <body>
+       <div class="area">  
+            <h2>Userslist</h2>
 
-            <ul class="logout">
-                <li>
-                   <a href="{{ route('auth.logout') }}">
-                         <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">
-                            Logout
-                        </span>
-                    </a>
-                </li>  
-            </ul>
-        </nav>
-  </body>
- </html>
+<div class="defaultcontainer">
+        <div class="row">
+                <form action="{{ route('profile.update', $user->id) }}" method="put" autocomplete="off">
+                    @csrf
+
+
+					<div class="form-group">
+                            <div class="form-label-group2">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                                <div class="form-label-group2">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+                            </div>
+
+
+					<div class="form-group">
+                            <div class="form-label-group2">
+                                <label>ZIP Code</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                        </div>
+
+                    
+                        <div class="form-group">
+								<div class="form-label-grou2">
+									<label for="country">Select Country</label>
+									<select name="country" id="country">
+											<option value="Austria">Austria</option>
+											<option value="Belgium">Belgium</option>
+											<option value="Canada">Canada</option>
+											<option value="Denmark">Denmark</option>
+											<option value="Norway">Norway</option>
+											<option value="Philippines">Philippines</option>
+											<option value="Sweden">Sweden</option>
+											<option value="United Kingdom">United Kingdom</option>
+											<option value="United States">United States</option>
+									</select>
+								</div>
+							</div>
+  
+                <button class="button" type="submit" class="btn btn-primary">update</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
 
 <style>
-
 @import url('https://fonts.googleapis.com/css?family=Lekton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap');
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+}
 
 
 :root {
@@ -241,4 +228,5 @@ background-color:#b38383;
     width: 100%;
     height: 100%;
 }
+
 </style>

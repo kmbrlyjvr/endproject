@@ -42,7 +42,9 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
 
     Route::get('', 'AdminController@index')->name('index');
     Route::get('/users', 'AdminController@users')->name('users');
-    Route::get('/blog', 'AdminController@blogpost')->name('blogpost');
+    Route::get('/{user}/userEdit', 'AdminController@edit')->name('edit');
+    Route::get('/orders', 'AdminController@orders')->name('orders');
+    Route::get('/blogpost', 'AdminController@blogpost')->name('blogpost');
     /*Route::get('/blogpost/uploadImgs', 'AdminController@uploadImgs')->name('uploadImgs');
     Route::get('/blog/upload', 'AdminController@upload')->name('upload');
     Route::get('/blog/create', 'AdminController@create')->name('create');
@@ -58,7 +60,6 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
     Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');    
 });
 
-
 /*Route::group(['middleware' => ['auth', 'admin']], function(){
         Route::get('/index', function (){
            return view('admin.index');
@@ -69,8 +70,6 @@ Route::group(['middleware' => ['App\Http\Middleware\AdminMiddleware']], function
 });*/
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
-
-
 
 Route::post('customize/orderTrouser', 'OrderController@orderTrouser')->name('orderTrouser');
 Route::get('/order/render/session.svg', 'OrderController@renderSvgSession')->name('order.renderSvgSession');
@@ -83,7 +82,6 @@ Route::get('/items', 'ItemsController@index')->name('items.index');
 
 Route::get('/customize/{item}', 'ItemsController@customize')->name('customize');
 Route::get('/svg/{file}.svg', 'SvgController@render')->name('svg.render');
-
 
 Route::get('/login', 'AuthController@login')->name('auth.login')->middleware('guest');
 Route::post('/login', 'AuthController@postLogin')->name('auth.postLogin')->middleware('guest');

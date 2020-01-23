@@ -113,11 +113,11 @@ export default {
 
                 sizes: [
                 { 
-                    id: 'x-small', name: 'X-Small'
+                    id: 'X-Small', name: 'X-Small'
                 },
 
                 { 
-                    id: 'small', name: 'Small'
+                    id: 'Small', name: 'Small'
                 },
 
                 { 
@@ -129,7 +129,7 @@ export default {
                 },
 
                 { 
-                    id: 'x-large', name: 'X-Large'
+                    id: 'X-Large', name: 'X-Large'
                 }
 
                 ]

@@ -11,30 +11,48 @@
     @stack('head')
 </head>
 
-<!--<div class="container">
-        <a href="{{ route('home') }}" class="logo">
-                <img src="/svgs/logo.svg">
-              </a>
-        <h2 class="title">Welcome Admin</h2>
-    
+ <body>
+    <div class="area">  
+            <h2>Orders</h2>
 
+<div class="defaultcontainer">
+        <div class="tablecontainer">
 
-<div class="admin-nav">                  
-        <nav>
-              <ul>
-                  <li><a href="/about">about</a></li>
-              <li><a href="{{ route('items.index') }}">generator</a></li>
-                  <li><a href="{{ route('admin.blogpost') }}">blog</a></li>
-                  <li><a class="nav-link" href="{{ route('profile') }}">userlist</a></li>
-      
-              </ul>
-            </nav>     
-      </div>
-</div>-->
-
-
-
-  <body><div class="area"></div><nav class="main-menu">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Product</th>
+                            <th>Size</th>
+                            <th>Address</th>
+                            <th>Total (+ shipping)</th>
+                            <th>Payment</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        @foreach($orders as $order)
+                        <tr>
+                            @foreach($users as $user)
+                            <td>{{ $order->user_name }}</td>
+                            <td>{{ json_decode($order->config)->type }}</td>
+                            <td>{{ json_decode($order->config)->size }}</td>
+                            <td>{{ $user->address }} {{ $user->zip }} {{ $user->country}}</td>
+                            <td>{{ $order->payment }}</td>
+                            <td>{{ $order->created_at->format('d/m/Y') }}</td>
+                            <td>{{ $order->status }}</td>
+                            @endforeach
+                            <td><a href="">Edit</a></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <nav class="main-menu">
             <ul>
                 <li>
                     <a href="{{ route('home') }}">
@@ -54,42 +72,26 @@
                 </li>
                 <li class="has-subnav">
                     <a href="{{ route('admin.users') }}">
-                       <i class="fa fa-list fa-2x"></i>
+                    <!--   <i class="fa fa-list fa-2x"></i> -->
+                    <i class="fa fa-user fa-2x"></i>                        
                         <span class="nav-text">
                             Userslist
                         </span>
                     </a>
-                    
                 </li>
-               <!-- <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-folder-open fa-2x"></i>
-                        <span class="nav-text">
-                            Pages
+                <li class="has-subnav">
+                    <a href="{{ route('admin.orders') }}">
+                    <i class="fa fa-truck fa-2x"></i>                        
+                    <span class="nav-text">
+                            Orders
                         </span>
                     </a>
-                </li>-->
+                </li>
                 <li>
-                    <a href="{{ route('blog.index') }}">
+                    <a href="{{ route('admin.blogpost') }}">
                         <i class="fa fa-font fa-2x"></i>
                         <span class="nav-text">
                            Blog
-                        </span>
-                    </a>
-                </li>
-                 <!-- <li>
-                 <a href="#">
-                       <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">
-                            Tables
-                        </span>
-                    </a>
-                </li>-->
-                <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            To-Do
                         </span>
                     </a>
                 </li>
@@ -97,7 +99,7 @@
 
             <ul class="logout">
                 <li>
-                   <a href="#">
+                   <a href="{{ route('auth.logout') }}">
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                             Logout
@@ -106,47 +108,78 @@
                 </li>  
             </ul>
         </nav>
-  </body>
-    </html>
-
+ </body>
+</html>
 
 <style>
-/*
-.html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: var(--black);
-  font-family: 'Lekton', sans-serif;
-}
-
-.container {
+ 
+.defaultcontainer {
   position: absolute;
   margin: 60px 0;
   width: 100%;
 }
 
-.logo img {
-    width: 10em;
+.tablecontainer {
+  grid-column-start: 6;
+  font-family: var(--main-font);
+  color: #51545f;
+  font-size: 15px;
+  min-width: 200px;
+  padding: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.admin-nav {
-    font-size: 1em;
+table{
+  border-collapse: collapse;
+
+}
+ th {
+  color: var(--nude);
 }
 
-.admin-nav li {
-    list-style: none;
+td:first-child {
+  color:var(--main-color);
+
 }
-*/
+
+th {
+  padding: 15px;
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  text-align: left;
+
+}
+
+td:nth-child(1){
+  border-bottom: 1px solid var(--main-txt-color);
+}
+
 @import url('https://fonts.googleapis.com/css?family=Lekton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap');
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 }
+
+
+:root {
+  --main: #f1e1d8;
+  --nude: #b38383;
+  --black: #231f20;
+  --main-font: 'Lekton', sans-serif;
+  --sec-font: 'Racing Sans One', cursive;  
+}
+
+.title2 {
+  font-family: 'Racing Sans One', cursive;
+  color: #b38383; 
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
 .fa-2x {
 font-size: 1em;
 }
@@ -266,13 +299,14 @@ padding: 0;
 color:#fff;
 background-color:#b38383;
 }
+
 .area {
-float: left;
-background: #fff;
-width: 100%;
-height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    background: #fff;
+    width: 100%;
+    height: 100%;
 }
-
-
 
 </style>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Orders;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -25,9 +26,16 @@ class AdminController extends Controller
         return view('admin.users', ['users' => $users]);
     }
 
+    public function orders()
+    {   
+        $users = User::all();
+        $orders = Orders::all();
+        return view('admin.orders', ['users' => $users], ['orders' => $orders]);
+    }
+
     public function blogpost()
     {
-        return view('admin.blog.index');
+        return view('admin.blogpost.index');
     }
 
     public function blogType($type)
@@ -63,7 +71,7 @@ class AdminController extends Controller
         $blog->is_published = $request->has('is_published');
         $blog->save();
 
-        return redirect()->route('admin.blog.show', $blog->id)->width('success', 'Blog created!');
+        return redirect()->route('admin.blogpost.show', $blog->id)->width('success', 'Blog created!');
     }
 
 
@@ -71,12 +79,12 @@ class AdminController extends Controller
     {
         $blog = new Blog;
 
-        return view('admin.blog.create', compact('blog'));
+        return view('admin.blogpost.create', compact('blog'));
     }
 
     public function edit(Blog $blog)
     {
-        return view('admin.blog.edit', compact('blog'));
+        return view('admin.blogpost.edit', compact('blog'));
     }
 
     public function update(Request $request, Blog $blog)
@@ -90,14 +98,14 @@ class AdminController extends Controller
         $blog->is_published = $request->has('is_published');
         $blog->save();
 
-        return redirect()->route('blog.index', $blog->id)->with('success', 'Blog updated!');
+        return redirect()->route('admin.blogpost.index', $blog->id)->with('success', 'Blog updated!');
     }
 
     public function destroy(Blog $blog)
     {
         $blog->delete();
 
-        return redirect()->route('blog.index')->with('success', 'Blogpost deleted!');
+        return redirect()->route('admin.blogpost.index')->with('success', 'Blogpost deleted!');
     }
 }
 

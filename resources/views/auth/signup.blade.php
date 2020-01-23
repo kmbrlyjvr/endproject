@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('title', 'Signup')
-
 @section('container')
 
 <div class="defaultcontainer">
@@ -29,8 +27,8 @@
 
 					<div class="form-group">
 							<div class="form-label-group">
-								<label>Adress</label>
-								<input type="text" class="form-control" name="adress" required>
+								<label>Address</label>
+								<input type="text" class="form-control" name="address" required>
 							</div>
 						</div>
 

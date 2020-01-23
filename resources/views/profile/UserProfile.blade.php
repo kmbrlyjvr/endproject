@@ -14,7 +14,7 @@
                             </tr>
                             <tr>
                                 <td>Address</td>
-                                <td>{{ $user->adress }} | {{ $user->zip }} | {{ $user->country }}</td>
+                                <td>{{ $user->address }} | {{ $user->zip }} | {{ $user->country }}</td>
                             </tr>
                             <tr>
                                 <td>Since</td>
@@ -23,16 +23,18 @@
                     </table>
             @endforeach
 
-        <a href="{{ route('profile.edit', $user->id) }}">Edit</a>
+        <a href="{{ route('userEdit', $user->id) }}">Edit</a>
         <h2><span class="highlightnude">Orders</span></h2>
+        <div class="tablecontainer">
 
             <table class="tableorders">
                 <thead>
                     <tr>
                         <th>Product</th>
                         <th>Size</th>
-                        <th>Total (+ shipping)</th>
                         <th>Address</th>
+                        <th>Total (+ shipping)</th>
+
                         <th>Payment</th>
                         <th>Date</th>
                         <th>Status</th>
@@ -42,18 +44,21 @@
                 <tbody>
                     @foreach($orders as $order)
                     <tr>
-                        <td>{{ $order->user_name}}</td>
+                        <td>{{ json_decode($order->config)->type }}</td>
+                        <td>{{ json_decode($order->config)->size }}</td>
+                        <td>{{ $user->address }} {{ $user->zip }}</td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $order->payment }}</td>
+                        <td>{{ $order->created_at->format('d/m/Y') }}</td>
+                        <td>{{ $order->status }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+        </div>
         
         </div>
     </div>
 </div>
+@endsection

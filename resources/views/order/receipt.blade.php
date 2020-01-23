@@ -21,7 +21,7 @@
                     <tbody>
                         <tr>
                             <td>NAME</td>
-                            <td>username</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>DATETIME</td>

@@ -26,7 +26,7 @@
                 </tr>
                 <tr>
                     <td>Size</td>
-                    <td>m</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>NAME</td>
@@ -54,16 +54,62 @@
                 </tr>
                 <tr>
                     <td>PAYMENT</td>
-                    <td><div class="form-label-group">
+                   <!-- <td><div class="form-label-group">
                             <label for="country">Select Payment</label>
                             <select name="country" id="country">
                                     <option value="Visa">Visa</option>
-                                    <option value="Paypal">PayPal</option>
                             </select>
-                        </div></td>
+                        </div>-->
+                    </td>
                 </tr>
                 <tr>
-                    <td>    @if(auth()->check())
+                    <td>
+
+        <form method="post">
+                <div class="form-group">
+                    <label for="existing_payment">Select Existing Payment Method</label>
+                    <select name="existing_payment" id="existing_payment" class="form-control">
+                        <option value="default">Please select ... (optional)</option>
+                            <option value="">
+                            </option>
+                    </select>
+                </div>
+                    <div class="form-group">
+                    <div class="form-label-group2">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                </div>
+                    <div class="form-group">
+                    <div class="form-label-group2">
+
+                        <label for="number">Number</label>
+                        <input type="text" class="form-control" id="number" name="number">
+                    </div>
+                </div>
+
+                    <div class="form-group">
+                            <div class="form-label-group2">
+
+                        <label for="ccv">CCV</label>
+                        <input type="text" class="form-control" id="ccv" name="ccv">
+                    </div>
+                </div>
+
+                    <div class="form-group">
+                            <div class="form-label-group2">
+
+                        <label for="expires">Expire Date</label>
+                        <input type="text" class="form-control" id="expires" name="expires">
+                    </div>
+                </div>
+                </div>
+            </form>
+                    </td>
+                </tr>
+                <tr>    
+                    <td>
+                        @if(auth()->check())
                             <a class="button" href="{{ route('order.receipt') }}">Order</a>
                             @else
                             <p> Please
@@ -72,10 +118,12 @@
                              <a href="{{ route('auth.signup')}}">sign up</a>
                              to complete your order
                             </p>
-                            @endif</td>
+                            @endif
+                        </td>
                 </tr>
             </tbody>
         </table>
+
     </div>
 </div>
 </div>

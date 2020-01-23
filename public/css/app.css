@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lekton&display=swap);@import url(https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap);:root {
+@import url(https://fonts.googleapis.com/css?family=Lekton&display=swap);@import url(https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap);@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);:root {
   --main: #f1e1d8;
   --nude: #b38383;
   --black: #231f20;
@@ -422,13 +422,11 @@ footer a.active {
 .shippingtable th {
   padding: 15px;
   text-align: left;
-  color: #51545f;
 }
 
 .shippingtable td {
   padding: 15px;
   text-align: left;
-  color: #51545f;
 }
 
 .shippingtable td:nth-child(1) {
@@ -439,14 +437,41 @@ footer a.active {
   background-color: #fff;
 }
 
-.tableuserlist th {
-  background-color: #f2f2f2;
-  color: #51545f;
+/* ##### TABLE PROFILE/USERSLIST/ORDERS + ADMIN ##### */
+
+.tablecontainer td {
+  width: 300px;
+}
+
+.tableorders table {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  border-collapse: collapse;
 }
 
 .tableorders th {
-  background-color: #f2f2f2;
-  color: #51545f;
+  color: var(--nude);
+  width: 150vh;
+}
+
+.tableorders td:first-child {
+  color: var(--main-color);
+}
+
+.tableorders th {
+  padding: 15px;
+  text-align: left;
+}
+
+.tableorders td {
+  padding: 15px;
+  text-align: left;
+}
+
+.tableorders td:nth-child(2) {
+  border-bottom: 1px solid var(--main-txt-color);
 }
 
 /* ##### FORMS ##### */
@@ -666,7 +691,6 @@ button {
 .profilecontainer {
   grid-column-start: 6;
   font-family: var(--main-font);
-  color: #51545f;
   font-size: 15px;
   margin: 20vh;
   text-align: center;
@@ -703,13 +727,11 @@ button {
 .tableprofile th {
   padding: 15px;
   text-align: left;
-  color: #51545f;
 }
 
 .tableprofile td {
   padding: 15px;
   text-align: left;
-  color: #51545f;
 }
 
 .tableprofile td:nth-child(1) {

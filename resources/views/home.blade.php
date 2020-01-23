@@ -45,6 +45,4 @@
   </div>
 
 
-<!-- how to use with gif preview -->
-
 @endsection

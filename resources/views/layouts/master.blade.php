@@ -23,7 +23,7 @@
                     </li>
 
                     <li class="userlogout">
-                            <a class="nav-link" href="{{ route('auth.logout') }}">Logout</a>
+                            <a class="nav-link" href="{{ route('auth.logout') }}">Logout<i class="fa fa-hand-peace-o" aria-hidden="true"></i></a>
                     </li>
                     @endif
                   <!-- 

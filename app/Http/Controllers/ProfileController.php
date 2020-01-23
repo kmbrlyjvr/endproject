@@ -27,8 +27,7 @@ class ProfileController extends Controller
     {   
         $users = User::all();
         $orders = Orders::all();
-        return view('profile.userprofile', ['users' => $users], ['orders' => $orders]);    
-    }
+        return view('profile.userprofile', ['users' => $users], ['orders' => $orders]);     }
 
 
     
