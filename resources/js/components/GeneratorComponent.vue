@@ -51,18 +51,14 @@
                         </option>
                     </select>
                 </label>
-
-            <!--  PRICE  -->
-            <h2 class="pick-color">Price 0,00€</h2>
-            <p>(Colors are included in the price)</p>
             
                 <!--  Country  -->
-            <h2 class="pick-color">Country</h2>
+            <h2 class="pick-color">6. Country</h2>
                 <label>
                     <select v-model="config.shipping">
                         <p class="text-danger">Please select a Country</p>
                         <option v-for="shipping in defaults.shippings" v-bind:key="shipping.id" :value="shipping.id">
-                            {{ shipping.country }} {{ shipping.price }}
+                            {{ shipping.country }}
                         </option>
                     </select>
                 </label>
