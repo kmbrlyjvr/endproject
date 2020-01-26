@@ -17,7 +17,7 @@ class CreateItemTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('text')->nullable();
-            $table->string('price')->nullable();
+            $table->float('price')->nullable();
             $table->string('svg')->nullable();
             $table->timestamps();
         });

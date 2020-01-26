@@ -56,7 +56,19 @@
             <h2 class="pick-color">Price 0,00€</h2>
             <p>(Colors are included in the price)</p>
             
-            <button type="submit" class="button" style="color:#f1e1d8;" >Done</button>
+                <!--  Country  -->
+            <h2 class="pick-color">Country</h2>
+                <label>
+                    <select v-model="config.shipping">
+                        <p class="text-danger">Please select a Country</p>
+                        <option v-for="shipping in defaults.shippings" v-bind:key="shipping.id" :value="shipping.id">
+                            {{ shipping.country }} {{ shipping.price }}
+                        </option>
+                    </select>
+                </label>
+                    
+                <button type="submit" class="button" style="color:#f1e1d8;" >Done</button>
+
         </form>
         </div> <!-- custom -->
     </div><!-- custom nav -->
@@ -99,6 +111,7 @@ export default {
                 logoColor: "#f3f1a0",
                 pocketChange: null,
                 size: "Small",
+                shipping: null,
             },
 
 
@@ -131,6 +144,10 @@ export default {
                 { 
                     id: 'X-Large', name: 'X-Large'
                 }
+
+                ],
+
+                shippings: [
 
                 ]
             }
@@ -165,7 +182,8 @@ export default {
                 'overallColor': this.config.overallColor,
                 'pocketColor': this.config.pocketColor,
                 'logoColor': this.config.logoColor,
-                'type': this.type
+                'type': this.type,
+                'shipping': this.config.shipping
                 }
             }).then((res)=>{
                 window.location.href= '/order';
@@ -181,6 +199,13 @@ export default {
         if (type) {
         
         this.type=type.content;
+
+        window.axios.get('/shippings')
+          .then((res)=>{
+              this.defaults.shippings=res.data;
+            }).catch(function(error){
+                console.log(error);
+            });
 
         }
     }

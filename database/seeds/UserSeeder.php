@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Posting;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 

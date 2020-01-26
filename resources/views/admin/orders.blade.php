@@ -35,15 +35,13 @@
                     <tbody>
                         @foreach($orders as $order)
                         <tr>
-                            @foreach($users as $user)
-                            <td>{{ $order->user_name }}</td>
+                            <td>{{ $order->user->name }}</td>
                             <td>{{ json_decode($order->config)->type }}</td>
                             <td>{{ json_decode($order->config)->size }}</td>
-                            <td>{{ $user->address }} {{ $user->zip }} {{ $user->country}}</td>
+                            <td>{{ $order->user->address }} {{ $order->user->zip }} {{ $order->user->country}}</td>
                             <td>{{ $order->payment }}</td>
                             <td>{{ $order->created_at->format('d/m/Y') }}</td>
                             <td>{{ $order->status }}</td>
-                            @endforeach
                             <td><a href="">Edit</a></td>
                         </tr>
                         @endforeach

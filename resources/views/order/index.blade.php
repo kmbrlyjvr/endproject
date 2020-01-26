@@ -21,60 +21,34 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Trousers</td>
-                    <td>Ryerson 001</td>
+                    <td>Item</td>
+                    <td>{{ $order['type'] }}</td>
                 </tr>
                 <tr>
                     <td>Size</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>NAME</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>DATETIME</td>
-                    <td>00.00.2020</td>
+                    <td>{{ $order['size'] }}</td>
                 </tr>
                 <tr>
                     <td>SUBTOTAL</td>
-                    <td></td>
+                    <td>{{ $item->price }}</td>
                 </tr>
                 <tr>
                     <td>SHIPPING</td>
-                    <td>00,0€</td>
+                    <td>{{ $shipping->price }}</td>
                 </tr>
                 <tr>
                     <td>GRANDTOTAL</td>
-                    <td>00,0€</td>
-                </tr>
-                <tr>
-                    <td>Status</td>
-                    <td>00,0€</td>
+                    <td>{{ $total }}</td>
                 </tr>
                 <tr>
                     <td>PAYMENT</td>
-                   <!-- <td><div class="form-label-group">
-                            <label for="country">Select Payment</label>
-                            <select name="country" id="country">
-                                    <option value="Visa">Visa</option>
-                            </select>
-                        </div>-->
-                    </td>
                 </tr>
                 <tr>
-                    <td>
+                <td>
 
-        <form method="post">
-                <div class="form-group">
-                    <label for="existing_payment">Select Existing Payment Method</label>
-                    <select name="existing_payment" id="existing_payment" class="form-control">
-                        <option value="default">Please select ... (optional)</option>
-                            <option value="">
-                            </option>
-                    </select>
-                </div>
-                    <div class="form-group">
+        <form method="post" autocomplete="off">
+            @csrf
+                   <div class="form-group">
                     <div class="form-label-group2">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name">
@@ -105,7 +79,7 @@
                 </div>
                 </div>
             </form>
-                    </td>
+                </td>
                 </tr>
                 <tr>    
                     <td>

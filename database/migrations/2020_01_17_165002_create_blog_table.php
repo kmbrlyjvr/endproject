@@ -17,6 +17,10 @@ class CreateBlogTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('text');
+            $table->string('hero');
+            $table->string('imagetwo')->nullable();
+            $table->string('imagethree')->nullable();
+            $table->string('imagefour')->nullable();
             $table->boolean('is_published')->default(false);
             $table->timestamps();
         });

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orders;
+use App\Models\ShippingCost;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +20,17 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $order = $request->session()->get('order', []);
-        return view('order.index', ['order' => $order]);
+        $shipping = ShippingCost::query()->where('id', $order['shipping'])->first();
+        $item = Item::query()->where('text', $order['type'])->first();
+
+        return view('order.index', [
+
+        'order' => $order, 
+        'shipping' => $shipping, 
+        'item' => $item,
+        'total' => $shipping->price + $item->price 
+
+        ]);
     }
 
     /**
@@ -78,7 +90,6 @@ class OrderController extends Controller
             break;
         }   
 
-
         return response()->view($view, ['config' => (object)$config])->header('Content-Type', 'image/svg+xml');
 
     }
@@ -112,7 +123,8 @@ class OrderController extends Controller
         $data ['item_title'] = "";
         $data['status'] = "Pending";
         $data['payment'] = "Visa";
-        $data['user_name'] = \Auth::user()->name;
+        $data['shipping'] = "";
+        $data['user_id'] = \Auth::user()->id;
 
         $message = "Order Successful!";
         $order = Orders::create($data);

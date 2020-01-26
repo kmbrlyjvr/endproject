@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/about', function() {
     return view('about');
@@ -37,6 +34,9 @@ Route::get('/generator', function() {
     return view('generator');
 });
 
+Route::get('/shippings', function() {
+    return  App\Models\ShippingCost::all();
+});
 
 Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
 
@@ -57,8 +57,25 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
     Route::post('/blog', 'BlogController@store')->name('store');
     Route::get('/blog/{id}/edit', 'BlogController@edit')->name('edit');
     Route::put('/blog/{id}', 'BlogController@update')->name('update');
-    Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');    
+    Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');   
+
 });
+
+Route::middleware('auth')->group(function() {
+    Route::post('customize/orderTrouser', 'OrderController@orderTrouser')->name('orderTrouser');
+Route::get('/order/render/session.svg', 'OrderController@renderSvgSession')->name('order.renderSvgSession');
+Route::get('/order/render/{order}.svg', 'OrderController@render')->name('order.render');
+Route::get('/order', 'OrderController@index')->name('order.index');
+Route::get('/order/{id}', 'OrderController@show')->name('order.show');
+Route::get('/receipt', 'OrderController@receipt')->name('order.receipt');
+
+Route::get('/items', 'ItemsController@index')->name('items.index');
+
+Route::get('/customize/{item}', 'ItemsController@customize')->name('customize');
+Route::get('/svg/{file}.svg', 'SvgController@render')->name('svg.render');
+
+});
+
 
 /*Route::group(['middleware' => ['auth', 'admin']], function(){
         Route::get('/index', function (){
@@ -71,17 +88,7 @@ Route::group(['middleware' => ['App\Http\Middleware\AdminMiddleware']], function
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
 
-Route::post('customize/orderTrouser', 'OrderController@orderTrouser')->name('orderTrouser');
-Route::get('/order/render/session.svg', 'OrderController@renderSvgSession')->name('order.renderSvgSession');
-Route::get('/order/render/{order}.svg', 'OrderController@render')->name('order.render');
-Route::get('/order', 'OrderController@index')->name('order.index');
-Route::get('/order/{id}', 'OrderController@show')->name('order.show');
-Route::get('/receipt', 'OrderController@receipt')->name('order.receipt');
 
-Route::get('/items', 'ItemsController@index')->name('items.index');
-
-Route::get('/customize/{item}', 'ItemsController@customize')->name('customize');
-Route::get('/svg/{file}.svg', 'SvgController@render')->name('svg.render');
 
 Route::get('/login', 'AuthController@login')->name('auth.login')->middleware('guest');
 Route::post('/login', 'AuthController@postLogin')->name('auth.postLogin')->middleware('guest');
