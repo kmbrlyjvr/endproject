@@ -145,6 +145,10 @@ export default {
 
                 shippings: [
 
+                ],
+
+                total: [
+
                 ]
             }
 
@@ -179,7 +183,8 @@ export default {
                 'pocketColor': this.config.pocketColor,
                 'logoColor': this.config.logoColor,
                 'type': this.type,
-                'shipping': this.config.shipping
+                'shipping': this.config.shipping,
+                'total': this.config.total
                 }
             }).then((res)=>{
                 window.location.href= '/order';

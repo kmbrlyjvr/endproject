@@ -23,7 +23,7 @@
                     </table>
             @endforeach
 
-        <a href="{{ route('userEdit', $user->id) }}">Edit</a>
+        <a href="">Edit</a>
         <h2><span class="highlightnude">Orders</span></h2>
         <div class="tablecontainer">
 

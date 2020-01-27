@@ -9,13 +9,11 @@ use Illuminate\Support\Str;
 
 class Blog extends Model
 {
-    protected $primaryKey = 'id';
 
     protected $table = "blog";
 
-    protected $fillable = ['title', 'text'];
+    protected $fillable = ['title', 'text', 'hero', 'imagetwo', 'imagethree', 'imagefour'];
 
-    protected $visible = ['id', 'title', 'text', 'is_published'];
     
 }
 

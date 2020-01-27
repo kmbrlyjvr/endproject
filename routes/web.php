@@ -41,10 +41,16 @@ Route::get('/shippings', function() {
 Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
 
     Route::get('', 'AdminController@index')->name('index');
-    Route::get('/users', 'AdminController@users')->name('users');
-    Route::get('/{user}/userEdit', 'AdminController@edit')->name('edit');
-    Route::get('/orders', 'AdminController@orders')->name('orders');
+    Route::get('/users', 'AdminUserController@users')->name('users');
+    Route::get('/{user}/edit', 'AdminUserController@edit')->name('userEdit');
+    Route::put('/{user}', 'AdminUserController@userUpdate')->name('userUpdate');
+    Route::get('/orders', 'AdminOrdersController@orders')->name('orders');
+    Route::put('/admin/{id}', 'AdminOrdersController@updateOrder')->name('updateOrder');
+    Route::get('/{user}/orderEdit', 'AdminOrdersController@edit')->name('orderEdit');
     Route::get('/blogpost', 'AdminController@blogpost')->name('blogpost');
+
+
+
     /*Route::get('/blogpost/uploadImgs', 'AdminController@uploadImgs')->name('uploadImgs');
     Route::get('/blog/upload', 'AdminController@upload')->name('upload');
     Route::get('/blog/create', 'AdminController@create')->name('create');
@@ -52,6 +58,9 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
     Route::get('/blog/{id}/edit', 'AdminController@edit')->name('edit');
     Route::put('/blog/{id}', 'AdminController@update')->name('update');
     Route::delete('/blog/{id}', 'AdminController@destroy')->name('destroy');*/
+
+
+
     Route::get('/blogpost/uploadImgs', 'AdminController@uploadImgs')->name('uploadImgs');
     Route::get('/blog/create', 'BlogController@create')->name('create');
     Route::post('/blog', 'BlogController@store')->name('store');

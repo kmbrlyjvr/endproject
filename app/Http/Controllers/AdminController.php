@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use App\Models\User;
 use App\Models\Orders;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -14,23 +14,10 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $users = User::all();
-        return view('admin.index', ['users' => $users]);
-    }
-
-    public function users()
-    {
-        $users = User::all();
-        return view('admin.users', ['users' => $users]);
-    }
-
-    public function orders()
-    {   
-        $users = User::all();
-        $orders = Orders::all();
-        return view('admin.orders', ['users' => $users], ['orders' => $orders]);
+        return view('admin.index');
     }
 
     public function blogpost()

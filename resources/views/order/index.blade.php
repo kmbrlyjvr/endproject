@@ -46,8 +46,6 @@
                 <tr>
                 <td>
 
-        <form method="post" autocomplete="off">
-            @csrf
                    <div class="form-group">
                     <div class="form-label-group2">
                         <label for="name">Name</label>
@@ -78,7 +76,6 @@
                     </div>
                 </div>
                 </div>
-            </form>
                 </td>
                 </tr>
                 <tr>    

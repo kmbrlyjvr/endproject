@@ -31,6 +31,8 @@ class OrderController extends Controller
         'total' => $shipping->price + $item->price 
 
         ]);
+
+
     }
 
     /**
@@ -42,6 +44,8 @@ class OrderController extends Controller
     public function orderTrouser(Request $request)
     {   
         $request->session()->put('order', $request->get('config', [] ));
+        $request->session()->put('order', $request->get('payment', [] ));
+
 
         return [
             'success' => true 
@@ -107,6 +111,8 @@ class OrderController extends Controller
         return view('order.show', ['order' => $order]);
     }
 
+
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -120,11 +126,13 @@ class OrderController extends Controller
 
         $data = [];
         $data ['config'] = json_encode($config);
-        $data ['item_title'] = "";
+        $data ['item_title'] = Item::get()->where('title')->first();
         $data['status'] = "Pending";
-        $data['payment'] = "Visa";
+        $data['payment'] = json_encode($payment);
         $data['shipping'] = "";
         $data['user_id'] = \Auth::user()->id;
+
+
 
         $message = "Order Successful!";
         $order = Orders::create($data);

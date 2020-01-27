@@ -1,4 +1,6 @@
 
+@extends('layouts.masterAdmin')
+@section('container')
 
 <div class="defaultcontainer">
         <h2 class="title">Upload new Blogpost</h1>
@@ -58,3 +60,4 @@
 </div>
 </div>
 
+@endsection
