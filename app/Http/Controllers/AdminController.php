@@ -14,34 +14,16 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         return view('admin.index');
     }
 
-    public function blogpost()
+    public function blogpost(Request $request)
     {
-        return view('admin.blogpost.index');
-    }
+        $blog = Blog::all();
 
-    public function blogType($type)
-    {
-        $imgs = \Storage::files($type);
-        return view('admin.blog.show', [
-            'imgs' => $imgs,
-            'type' => $type,
-        ]);
-    }
-
-    public function uploadImgs(UploadImgRequest $request)
-    {
-        $type = $request->get('type');
-        foreach ($request->images as $image) {
-            $image->storage($type);
-        }
-
-        return redirect()->route('admin.blogType', ['type' => $type]);
+        return view('admin.blogpost.index', ['blog' => $blog]);
     }
     
 
@@ -50,15 +32,33 @@ class AdminController extends Controller
         $this->validate($request, [
 
             'title' => 'required|string|min:3|max:192',
-            'text' => 'required|string|between:2,140',
+            'text' => 'required|string',
+            'bigtext' => 'required|string',
+            'hero' => 'required|file',
+            'imagetwo' => 'required|file',
+            'imagethree' => 'required|file',
+            'imagefour' => 'required|file',
+
         ]);
 
         $blog = new Blog();
-        $blog->fill($request->all());
-        $blog->is_published = $request->has('is_published');
+        $blog->fill($request->only(['title', 'text', 'bigtext', 'is_published']));
         $blog->save();
 
-        return redirect()->route('admin.blogpost.show', $blog->id)->width('success', 'Blog created!');
+        $storagePath = "blog/{$blog->id}";
+
+        $pathHero = $request->file('hero')->store($storagePath);
+        $pathImagetwo = $request->file('imagetwo')->store($storagePath);
+        $pathImagethree = $request->file('imagethree')->store($storagePath);
+        $pathImagefour = $request->file('imagefour')->store($storagePath);
+
+        $blog->hero = $pathHero;
+        $blog->imagetwo = $pathImagetwo;
+        $blog->imagethree = $pathImagethree;
+        $blog->imagefour = $pathImagefour;
+        $blog->save();
+
+        return redirect()->route('admin.blogpost', $blog->id)->with('success', 'Blog created!');
     }
 
 

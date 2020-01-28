@@ -9,19 +9,19 @@
 
     <div class="blogcontainer">
         @foreach($blogs as $blog)
-        <div class="blogheroimage"><img src="{{ $blog->hero }}" alt="woman talking to a man" /></div>
+        <div class="blogheroimage"><img src="{{ asset('storage/' . $blog->hero)}}" alt="woman talking to a man" /></div>
 
             <div class="blogpost">
                     <p><span class="highlight">{{ $blog->text }} </span></p>
 
-                        <img class ="blogimagestwo" src="{{ $blog->imagetwo }}" alt="stylish girl">
+                        <img class ="blogimagestwo" src="{{ asset('storage/' . $blog->imagetwo)}}" alt="stylish girl">
                     <div class="designername"><h2>{{ $blog->title }}</h2></div>
             </div>
     </div>
        <div class="blogimagessmall">
             <div class="bigtextcontainer"><h2 class="bigtext"> <span class="highlightbigtext">{{ $blog->bigtext }}</span><h2></div>
-            <div class="blogimagethree"><img src="{{ $blog->imagethree }}" alt="girl and sneakers"></div>
-            <div class="blogimagefour"><img src="{{ $blog->imagefour }}" alt="girl and sneakers"></div>
+            <div class="blogimagethree"><img src="{{ asset('storage/' . $blog->imagethree)}}" alt="girl and sneakers"></div>
+            <div class="blogimagefour"><img src="{{ asset('storage/' . $blog->imagefour)}}" alt="girl and sneakers"></div>
        </div>       
        @endforeach 
 </div>

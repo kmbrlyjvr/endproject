@@ -8,41 +8,43 @@
         <img src="/svgs/logo.svg">
             <div class="receiptsmall"> 
                                 
-                @if(session('status'))
-                <div class="status" style="visibility:hidden;">
-                    {{ session('status') }}
-                </div>
-                @endif
+                    @if(session('status'))
+                    <div class="status" style="visibility:hidden;">
+                        {{ session('status') }}
+                    </div>
+                    @endif
 
                 <table>
                     <tbody>
                         <tr>
+                            @foreach($users as $user)
                             <td>NAME</td>
-                            <td></td>
+                            <td>{{ $user->name }}</td>
+                            @endforeach
                         </tr>
                         <tr>
                             <td>DATETIME</td>
-                            <td>00.00.2020 00:00PM</td>
+                            <td>{{ $order->created_at->format('d/m/Y') }}</td>
                         </tr>
                         <tr>
                             <td>Trousers</td>
-                            <td>Ryerson 001</td>
+                            <td>{{ json_decode($order->config)->type }}</td>
                         </tr>
                         <tr>
                             <td>SUBTOTAL</td>
-                            <td>00,0€</td>
+                            <td>{{ $item->price }}€</td>
                         </tr>
                         <tr>
                             <td>SHIPPING</td>
-                            <td>00,0€</td>
+                            <td>{{ $shipping->price }}€</td>
                         </tr>
-                        <tr>
+                        <tr style="color:var(--nude);">
                             <td>GRANDTOTAL</td>
-                            <td>00,0€</td>
+                            <td>{{ $total }}€</td>
                         </tr>
                         <tr>
                             <td>PAYMENT</td>
-                            <td>visa</td>
+                            <td>{{ $order->payment }}</td>
                         </tr>
                     </tbody>
                 </table>

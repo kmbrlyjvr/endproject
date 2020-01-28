@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminUserController extends Controller
 {
-    public function users()
+    public function index()
     {
         $users = User::all();
         return view('admin.users', ['users' => $users]);
@@ -19,7 +19,7 @@ class AdminUserController extends Controller
         return view('admin.userEdit', compact('user'));
     }
 
-    public function userUpdate(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         $this->validate($request, [
 
@@ -31,11 +31,10 @@ class AdminUserController extends Controller
             'country' => 'min:2',
        ]);
 
-        $user = User::findOrFail($id);
         $user->fill($request->all());
         $user->save();
 
-        return redirect()->route('admin.users', $user->id)->with('success', 'User updated!');
+        return redirect()->route('admin.user.index')->with('success', 'User updated!');
 
     }
 }

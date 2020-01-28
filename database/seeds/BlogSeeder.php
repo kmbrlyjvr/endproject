@@ -23,6 +23,7 @@ class BlogSeeder extends Seeder
             'imagetwo' => 'imgs/alealitrouserportrait.jpg',
             'imagethree' => 'designers/alealijordan.jpg',
             'imagefour' => 'designers/alealicloseup.jpg',
+            'is_published' => 1
         ]);
 
     }

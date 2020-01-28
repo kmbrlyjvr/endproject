@@ -14,7 +14,6 @@
                 <th>Name</th>
                 <th>E-Mail</th>
                 <th>Address</th>
-
                 <th>Registered since</th>
             </tr>
         </thead>
@@ -26,7 +25,7 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->address }} | {{ $user->zip }} | {{ $user->country }}</td>
                 <td>{{ $user->created_at->format('d/m/Y') }}</td>
-                <td><a href="{{ route('admin.userEdit', $user->id)}}">Edit</a></td>
+                <td><a href="{{ route('admin.user.edit', $user->id)}}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>

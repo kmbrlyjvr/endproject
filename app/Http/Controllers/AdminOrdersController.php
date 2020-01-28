@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\Orders;
 use App\Models\User;
 
 
+
 class AdminOrdersController extends Controller
 {
-    public function orders()
+    public function index()
     {   
-        $orders = Orders::all()->where('id');
-        $users = User::all()->where('id');
+        $orders = Orders::all();
 
         return view('admin.orders', [
-            'users' => $users, 
             'orders' => $orders
         ]);
     }
@@ -27,24 +27,24 @@ class AdminOrdersController extends Controller
         return view('admin.orderEdit', ['order' => $order]);
     }*/
 
-     public function editOrder(Orders $order)
+     public function edit(Orders $order)
     {   
         return view('admin.orderEdit', compact('order'));
     }
 
-    public function updateOrder(Request $request, $id) 
+    public function update(Request $request, Orders $order) 
     {
         $this->validate($request, [
-            'address' => 'min:5',
-            'zip' => 'min:5',
-            'country' => 'min:2',
-            'status' => 'string|min:1',
+            'address' => 'required|min:5',
+            'status' => [
+                'required',
+                Rule::in(['Pending', 'Canceled', 'Delivered']),
+            ],
         ]); 
 
-        $order = Orders::findOrFail($id);
         $order->fill($request->all());
         $order->save();
 
-        return redirect()->route('admin.orders', $order->id)->with('success', 'Order updated');
+        return redirect()->route('admin.order.index', [$order->id])->with('success', 'Order updated');
     }
 }

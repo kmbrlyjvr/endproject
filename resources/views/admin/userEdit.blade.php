@@ -8,11 +8,9 @@
     <div class="formcontainer">
 
         <div class="row">
-                <form action="{{ route('admin.userUpdate', $user->id )}}" method="post" autocomplete="off">
+                <form action="{{ route('admin.user.update', $user->id) }}" method="post" autocomplete="off">
                     @csrf
                     @method('put')
-
-
 
 					<div class="form-group">
                             <div class="form-label-group2">
@@ -55,6 +53,5 @@
             </form>
         </div>
     </div>
-
 </div>
 @endsection

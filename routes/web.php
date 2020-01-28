@@ -38,25 +38,26 @@ Route::get('/shippings', function() {
     return  App\Models\ShippingCost::all();
 });
 
-Route::middleware('auth')->name('admin.')->prefix('admin')->group(function() {
+Route::middleware('auth')->middleware('admin')->name('admin.')->prefix('admin')->group(function() {
 
-    Route::get('', 'AdminController@index')->name('index');
 
-    Route::get('/users', 'AdminUserController@users')->name('users');
-    Route::get('/{user}/edit', 'AdminUserController@edit')->name('admin.userEdit');
-    Route::put('/{id}', 'AdminUserController@userUpdate')->name('userUpdate');
+    Route::get('/', 'AdminController@index')->name('index');
 
-    Route::get('/orders', 'AdminOrdersController@orders')->name('orders');
-    Route::get('/{order}/orderEdit', 'AdminOrdersController@editOrder')->name('orderEdit');
-    Route::put('/{id}', 'AdminOrdersController@updateOrder')->name('updateOrder');
+    Route::get('/users', 'AdminUserController@index')->name('user.index');
+    Route::get('/user/{user}/edit', 'AdminUserController@edit')->name('user.edit');
+    Route::put('/user/{user}', 'AdminUserController@update')->name('user.update');
+
+    Route::get('/orders', 'AdminOrdersController@index')->name('order.index');
+    Route::get('/order/{order}/edit', 'AdminOrdersController@edit')->name('order.edit');
+    Route::put('/order/{order}', 'AdminOrdersController@update')->name('order.update');
 
     Route::get('/blogpost', 'AdminController@blogpost')->name('blogpost');
     Route::get('/blogpost/uploadImgs', 'AdminController@uploadImgs')->name('uploadImgs');
-    Route::get('/blog/create', 'BlogController@create')->name('create');
-    Route::post('/blog', 'BlogController@store')->name('store');
-    Route::get('/blog/{id}/edit', 'BlogController@edit')->name('edit');
-    Route::put('/blog/{id}', 'BlogController@update')->name('update');
-    Route::delete('/blog/{id}', 'BlogController@destroy')->name('destroy');   
+    Route::get('/blog/create', 'AdminController@create')->name('create');
+    Route::post('/blog', 'AdminController@store')->name('store');
+    Route::get('/blog/{id}/edit', 'AdminController@edit')->name('edit');
+    Route::put('/blog/{id}', 'AdminController@update')->name('update');
+    Route::delete('/blog/{id}', 'AdminController@destroy')->name('destroy');   
 
 });
 

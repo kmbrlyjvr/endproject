@@ -107,15 +107,21 @@ class OrderController extends Controller
     public function receipt(Request $request)
     {
         $config = $request->session()->get('order', []);
+        $order = $request->session()->get('order', []);
+        $users = User::where("id", Auth::user()->id)->get();
+        $shipping = ShippingCost::query()->where('id', $order['shipping'])->first();
+        $item = Item::query()->where('text', $order['type'])->first();
+
 
         $data = [];
         $data ['config'] = json_encode($config);
-        $data ['item_title'] = Item::get()->where('title')->first();
+        //$data ['item_title'] = Item::get()->where('title')->first();
         $data['status'] = "Pending";
         $data['shipping'] = "";
+        $data['payment'] = "Visa";
         $data['address'] = \Auth::user()->address;
+        $data['zip'] = \Auth::user()->zip;
         $data['user_id'] = \Auth::user()->id;
-
 
 
         $message = "Order Successful!";
@@ -127,6 +133,12 @@ class OrderController extends Controller
 
         $request->session()->flash('status', $message);
         
-        return view ('order.receipt');
+        return view ('order.receipt', [
+            'order' => $order, 
+            'users' => $users, 
+            'shipping' => $shipping,
+            'item' => $item,
+            'total' => $shipping->price + $item->price,
+            ]);
     }
 }

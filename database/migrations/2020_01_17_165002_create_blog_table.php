@@ -16,12 +16,13 @@ class CreateBlogTable extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->longText('text');
-            $table->longText('bigtext');
-            $table->string('hero');
+            $table->text('text');
+            $table->text('bigtext')->nullable();
+            $table->string('hero')->nullable();
             $table->string('imagetwo')->nullable();
             $table->string('imagethree')->nullable();
             $table->string('imagefour')->nullable();
+            $table->boolean('softdelete')->default(false);
             $table->boolean('is_published')->default(false);
             $table->timestamps();
         });

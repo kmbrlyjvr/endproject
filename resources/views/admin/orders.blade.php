@@ -26,11 +26,11 @@
                             <td>{{ $order->user->name }}</a></td>
                             <td>{{ json_decode($order->config)->type }}</td>
                             <td>{{ json_decode($order->config)->size }}</td>
-                            <td>{{ $order->user->address }} | {{ $order->user->zip }} | {{ $order->user->country}}</td>
+                            <td>{{ $order->address }} | {{ $order->user->zip }} | {{ $order->user->country}}</td>
                             <td>{{ $order->payment }}</td>
                             <td>{{ $order->created_at->format('d/m/Y') }}</td>
                             <td>{{ $order->status }}</td>
-                            <td><a href="{{ route('admin.orderEdit', $order->user->id)}}">Edit</a></td>
+                            <td><a href="{{ route('admin.order.edit', $order->id)}}">Edit</a></td>
                         @endforeach
                     </tr>
 

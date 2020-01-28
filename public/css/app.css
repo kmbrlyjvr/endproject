@@ -1345,6 +1345,29 @@ nav.main-menu li.active > a,
   height: 100%;
 }
 
+.blogadmincontainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 20px;
+  padding-top: 30px;
+  line-height: 1.5;
+  width: 100vw;
+}
+
+.form-admin-group {
+  color: var(--black);
+}
+
+.blogpublish {
+  width: 200px;
+}
+
+.adminbutton {
+  color: var(--main);
+}
+
 /* ##### MEDIA QUERIES ##### */
 
 /*

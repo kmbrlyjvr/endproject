@@ -10,7 +10,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.users')}}">
+                    <a href="{{ route('admin.user.index')}}">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             Admin
@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="has-subnav">
-                    <a href="{ route('admin.users') }}">
+                    <a href="{ route('admin.user.index') }}">
                     <!--   <i class="fa fa-list fa-2x"></i> -->
                     <i class="fa fa-user fa-2x"></i>                        
                         <span class="nav-text">
@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li class="has-subnav">
-                    <a href="{{ route('admin.orders') }}">
+                    <a href="{{ route('admin.order.index') }}">
                     <i class="fa fa-truck fa-2x"></i>                        
                     <span class="nav-text">
                             Orders

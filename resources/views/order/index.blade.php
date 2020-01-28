@@ -30,15 +30,15 @@
                 </tr>
                 <tr>
                     <td>SUBTOTAL</td>
-                    <td>{{ $item->price }}</td>
+                    <td>{{ $item->price }}€</td>
                 </tr>
                 <tr>
                     <td>SHIPPING</td>
-                    <td>{{ $shipping->price }}</td>
+                    <td>{{ $shipping->price }}€</td>
                 </tr>
                 <tr>
                     <td>GRANDTOTAL</td>
-                    <td>{{ $total }}</td>
+                    <td>{{ $total }}€</td>
                 </tr>
                 <tr>
                     <td>

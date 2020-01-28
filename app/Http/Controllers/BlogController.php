@@ -39,12 +39,7 @@ class BlogController extends Controller
         $blog->is_published = $request->has('has_published');
         $blog->save();
 
-        return redirect()->route('blog.show', $blog->id)->with('success', 'Blog created');
-    }
-
-    public function show(Blog $blog)
-    {
-        return view('blog.show', compact('blog'));
+        return redirect()->route('admin.blogpost', $blog->id)->with('success', 'Blog created');
     }
 
     public function edit(Blog $blog)
