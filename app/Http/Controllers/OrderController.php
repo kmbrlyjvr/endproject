@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Orders;
 use App\Models\ShippingCost;
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,7 @@ class OrderController extends Controller
         'order' => $order, 
         'shipping' => $shipping, 
         'item' => $item,
-        'total' => $shipping->price + $item->price 
+        'total' => $shipping->price + $item->price,
 
         ]);
 
@@ -44,8 +45,6 @@ class OrderController extends Controller
     public function orderTrouser(Request $request)
     {   
         $request->session()->put('order', $request->get('config', [] ));
-        $request->session()->put('order', $request->get('payment', [] ));
-
 
         return [
             'success' => true 
@@ -97,21 +96,6 @@ class OrderController extends Controller
         return response()->view($view, ['config' => (object)$config])->header('Content-Type', 'image/svg+xml');
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function show($id)
-    {
-        $order = Order::findOrFail($id);
-        return view('order.show', ['order' => $order]);
-    }
-
-
     
     /**
      * Show the form for editing the specified resource.
@@ -128,8 +112,8 @@ class OrderController extends Controller
         $data ['config'] = json_encode($config);
         $data ['item_title'] = Item::get()->where('title')->first();
         $data['status'] = "Pending";
-        $data['payment'] = json_encode($payment);
         $data['shipping'] = "";
+        $data['address'] = \Auth::user()->address;
         $data['user_id'] = \Auth::user()->id;
 
 

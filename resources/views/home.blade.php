@@ -12,7 +12,7 @@
             Every 2 months, a new designer gets the chance to present their best and favourite trousers of their newest collection.<br>
             You are able to change either color, material, buttons or >the trousers' pocket. <br>
             All trousers are made for women aswell as for men.</p>
-        </div>
+    </div>
 </div>
 
        
@@ -41,7 +41,6 @@
     <a href="{{ route('items.index') }}" class="button">customize</a>
   </div>
   <div class="box">
-  <img src="/trousers_utility_new.svg" alt="trouser utility">
   </div>
 
 

@@ -25,17 +25,11 @@ class ProfileController extends Controller
 
     public function profile()
     {   
-        $users = User::all();
-        $orders = Orders::all();
-        return view('profile.userprofile', ['users' => $users], ['orders' => $orders]);     }
+        $orders = Orders::where("user_id", Auth::user()->id)->get();
+        $users = User::where("id", Auth::user()->id)->get();
 
-
-    
-    public function show(User $user)
-    {   
-        return view('profile.show', compact('user'));
+        return view('profile.userprofile', ['users' => $users, 'orders' => $orders]);     
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -56,22 +50,23 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
 
             'name' => 'min:2',
             'email' => 'email|unique:user,email',
-            'password' => 'confirmed|min:8',
-            'adress' => 'min:5',
+            'address' => 'min:5',
             'zip' => 'min:2',
             'country' => 'min:2',
        ]);
 
+        //$user->fill($request->all());
+        $user = User::findOrFail($id);
         $user->fill($request->all());
         $user->save();
 
-        return redirect()->route('profile.show', $user->id)->with('success', 'Profile updated!');
+        return redirect()->route('profile', $user->id)->with('success', 'Profile updated!');
 
     }
 

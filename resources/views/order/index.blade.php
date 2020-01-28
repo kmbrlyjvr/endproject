@@ -41,6 +41,18 @@
                     <td>{{ $total }}</td>
                 </tr>
                 <tr>
+                    <td>
+                        <div class="form-group">
+                            <div class="form-label-grou2">
+                                <label for="address">Address</label>
+                                <select name="address" id="address">
+                                        <option value="Pending"><option>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
                     <td>PAYMENT</td>
                 </tr>
                 <tr>

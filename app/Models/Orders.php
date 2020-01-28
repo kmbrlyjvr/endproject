@@ -11,7 +11,7 @@ class Orders extends Model
 {
     protected $table = "orders";
 
-    protected $fillable = ['user_id', 'user_id', 'item_title', 'config', 'status', 'payment', 'payment_id'];
+    protected $fillable = ['user_id', 'item_title', 'address', 'config', 'status', 'payment', 'payment_id'];
 
 
     public function user()
