@@ -24,38 +24,45 @@
             @endforeach
 
         <a href="{{ route('profile.edit', $user->id) }}">Edit</a>
+
+
         <h2><span class="highlightnude">Orders</span></h2>
-        <div class="tablecontainer">
 
-            <table class="tableorders">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Size</th>
-                        <th>Address</th>
-                        <th>Total (+ shipping)</th>
+            <div class="tablecontainer">
 
-                        <th>Payment</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-        
+
+                <table class="tableorders">
+
+    
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Size</th>
+                            <th>Address</th>
+                            <th>Payment</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                
                 <tbody>
-                    @foreach($orders as $order)
+                        @foreach($orders as $order)
+
                     <tr>
                         <td>{{ json_decode($order->config)->type }}</td>
                         <td>{{ json_decode($order->config)->size }}</td>
                         <td>{{ $user->address }} {{ $user->zip }}</td>
-                        <td></td>
                         <td>{{ $order->payment }}</td>
                         <td>{{ $order->created_at->format('d/m/Y') }}</td>
                         <td>{{ $order->status }}</td>
+
                     </tr>
-                    @endforeach
                 </tbody>
+                @endforeach
+
             </table>
         </div>
+    
         </div>
         
         </div>

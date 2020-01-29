@@ -55,7 +55,7 @@ Route::middleware('auth')->middleware('admin')->name('admin.')->prefix('admin')-
     Route::get('/blogpost/uploadImgs', 'AdminController@uploadImgs')->name('uploadImgs');
     Route::get('/blog/create', 'AdminController@create')->name('create');
     Route::post('/blog', 'AdminController@store')->name('store');
-    Route::get('/blog/{id}/edit', 'AdminController@edit')->name('edit');
+    Route::get('/blogpost/{id}/edit', 'AdminController@edit')->name('blogpost.edit');
     Route::put('/blog/{id}', 'AdminController@update')->name('update');
     Route::delete('/blog/{id}', 'AdminController@destroy')->name('destroy');   
 

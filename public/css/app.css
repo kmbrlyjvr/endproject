@@ -29,6 +29,62 @@ body {
   width: 100%;
 }
 
+.slideshow {
+  width: 500px;
+  height: 500px;
+  border: solid 1px #2F275E;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.anim-info {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  font-size: 10px;
+}
+
+.anim-info .info-field {
+  position: absolute;
+  background-color: var(--main);
+  font-weight: 800;
+  padding: 10px;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.info-field:nth-child(1) {
+  -webkit-transform: translate(0, 0px);
+  transform: translate(0, 0px);
+}
+
+.info-field:nth-child(2) {
+  -webkit-transform: translate(0, 62px);
+  transform: translate(0, 62px);
+}
+
+.info-field:nth-child(3) {
+  -webkit-transform: translate(0, 124px);
+  transform: translate(0, 124px);
+}
+
+.label {
+  white-space: nowrap;
+}
+
 .hero {
   display: -webkit-box;
   display: flex;
@@ -573,6 +629,7 @@ footer a.active {
   border: 0.5px solid transparent;
   border-bottom: 1px solid var(--black);
   background-color: transparent;
+  font-family: var(--main-font);
 }
 
 .form-label-group {
@@ -586,6 +643,7 @@ footer a.active {
   border: 0.5px solid transparent;
   border-bottom: 1px solid var(--black);
   background-color: transparent;
+  font-family: var(--main-font);
 }
 
 .form-group select {
@@ -747,6 +805,24 @@ button {
 }
 
 /* ##### TROUSERS CUSTOMIZATION ##### */
+
+.trouserbg {
+  position: absolute;
+}
+
+.trouserbg img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  filter: grayscale(100%);
+}
 
 .trouserscontainer2 {
   display: -webkit-box;
@@ -1053,7 +1129,7 @@ td {
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: overlay;
-  width: 100%;
+  width: 176vh;
 }
 
 .blogpost {
@@ -1366,6 +1442,11 @@ nav.main-menu li.active > a,
 
 .adminbutton {
   color: var(--main);
+}
+
+#adminrow {
+  height: 300px;
+  text-align: center;
 }
 
 /* ##### MEDIA QUERIES ##### */

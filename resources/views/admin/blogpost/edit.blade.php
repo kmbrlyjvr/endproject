@@ -4,7 +4,7 @@
 
 <div class="area">
 <div class="defaultcontainer">
-        <h2 class="title">Upload new Blogpost</h1>
+        <h2 class="title">Edit Blogpost</h1>
             <div class="blogadmincontainer">
                 <form class="form" id="form"  action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="type"/>
@@ -52,11 +52,13 @@
                         <button class="button" type="submit">Publish</button>
                 </div>
             </form>
-
             <div class="blogpublish">
                         <h3>Published Blogposts</h3>
                         @foreach($blog as $blog)
                         <p>{{ $blog->title }}</p>
+                        <button class="adminbutton" type="submit">Delete</button>
+
+
                         @endforeach
 
 

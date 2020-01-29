@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,nofollow">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,7 +14,6 @@
 
 <body>
     <div class="container">
-
         @yield('container')
     </div>
 

@@ -62,7 +62,7 @@ class AdminController extends Controller
     }
 
 
-    public function create(Request $request)
+    public function create(Request $blog)
     {
         $blog = new Blog;
 

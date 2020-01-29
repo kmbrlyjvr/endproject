@@ -20,16 +20,6 @@
                 <form action="{{ route('admin.order.update', $order->id) }}" method="post" autocomplete="off">
                     @csrf
                     @method('put')
-                 <!--   <div class="form-group">
-                            <div class="form-label-grou2">
-                                <label for="trouser">Trouser</label>
-                                <select name="trouser" id="trouser" value="">
-                                        <option value="utility">Utility</option>
-                                        <option value="slack">Slack</option>
-                                        <option value="overall">Overall</option>
-                                </select>
-                            </div>
-                        </div>-->
 
                         <div class="form-group">
                                 <div class="form-label-group2">

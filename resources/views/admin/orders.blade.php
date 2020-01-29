@@ -30,15 +30,18 @@
                             <td>{{ $order->payment }}</td>
                             <td>{{ $order->created_at->format('d/m/Y') }}</td>
                             <td>{{ $order->status }}</td>
-                            <td><a href="{{ route('admin.order.edit', $order->id)}}">Edit</a></td>
+                            <td><a href="{{ route('admin.order.edit', $order->id)}}">Edit</a></td>                                                                            
+                     </form>
+                 </div>
+                            </td>
                         @endforeach
                     </tr>
-
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
 
     @endsection
-    
+

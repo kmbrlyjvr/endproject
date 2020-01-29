@@ -6,9 +6,9 @@
 
 <!-- RETURN (BACK) BUTTON -->
 <!--<a href="{{ URL::previous() }}" class="back_button">Back</a> -->
+@foreach($blogs as $blog)
 
     <div class="blogcontainer">
-        @foreach($blogs as $blog)
         <div class="blogheroimage"><img src="{{ asset('storage/' . $blog->hero)}}" alt="woman talking to a man" /></div>
 
             <div class="blogpost">

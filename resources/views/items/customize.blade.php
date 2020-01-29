@@ -12,6 +12,7 @@
 
 @section('container')
 
+
 <div class="defaultcontainer">
     <!-- RETURN (BACK) BUTTON -->
     <a href="{{ URL::previous() }}" class="back_button">Back</a> 
@@ -19,6 +20,6 @@
             <generator-component></generator-component>
         </div>
 <div>
-    
+
 @endsection
      

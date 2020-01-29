@@ -12,7 +12,7 @@ class Blog extends Model
 
     protected $table = "blog";
 
-    protected $fillable = ['title', 'text', 'hero', 'imagetwo', 'imagethree', 'imagefour', 'is_published'];
+    protected $fillable = ['title', 'text', 'hero', 'bigtext','imagetwo', 'imagethree', 'imagefour', 'is_published'];
 
     
 }
