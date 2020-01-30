@@ -6,7 +6,7 @@
 <div class="defaultcontainer">
         <h2 class="title">Upload new Blogpost</h1>
             <div class="blogadmincontainer">
-                <form class="form" id="form"  action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="form" id="form"  action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <input type="hidden" name="type"/>
                     @csrf
                             <br>
