@@ -17,6 +17,7 @@
     <!-- RETURN (BACK) BUTTON -->
     <a href="{{ URL::previous() }}" class="back_button">Back</a> 
         <div id="app">
+
             <generator-component></generator-component>
         </div>
 <div>

@@ -15,10 +15,15 @@ class BlogController extends Controller
      */
    public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::orderBy('created_at', 'desc')->take(2)->get();
+
+      /*  $blogs = Blog::all();*/
         return view('blog.index', ['blogs' => $blogs]);
     }
 
-
+    public function show(Blog $blog)
+    {
+        return view('blog.show', compact('blog'));
+    }
     
 }

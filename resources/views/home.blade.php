@@ -7,8 +7,8 @@
     <div class="desc">
             <p><span>Sinta is a service allowing you to personalize your own trousers, which are created by designers.<br>
             Every 2 months, a new designer gets the chance to present their best and favourite trousers of their newest collection.<br>
-            You are able to change either color, material, buttons or >the trousers' pocket. <br>
-            All trousers are made for women aswell as for men.</span></p>
+            You are able to change either color, material, buttons or the trousers' pocket. <br>
+            All trousers are made for women as well as for men.</span></p>
     </div>
 </div>
 
@@ -24,19 +24,15 @@
 
     <div class="instructions">
 
-            <div class="anim-info move">
-                    <div class="info-field anim-name">
-                        <div class="label">HOW TO USE IT</div>
-                    </div>
-                </div>
 
-            <p><span class="highlightnude">1. Choose Trouser</span></p>
-            <img style="width: 45vh;"src="imgs/howto_trouserbw.svg">
-            <p><span class="highlightnude">2. Trouser / Pocket / Logo Color</span></p>
-            <img style="width: 50vh;"src="imgs/howto_customizetrouser.svg">
-            <p><span class="highlightnude">5. Select Size</span></p>
-            <p><span class="highlightnude">6. Order and rock it</span></p>
-            <img style="width: 50vh;"src="imgs/howto_buy.svg">
+                <p class="title1">1. Sign Up / Log in</p>
+                <p class="title1">2. Choose Trouser</p>
+                <img style="width: 45vh;"src="imgs/howto_trouserbw.svg">
+                <p class="title1">3. Trouser / Pocket / Logo Color</p>
+                <img style="width: 50vh;"src="imgs/howto_customizetrouser.svg">
+                <p class="title1">4. Select Size</p>
+                <p class="title1">5. Order and rock it</p>
+                <img style="width: 50vh;"src="imgs/howto_buy.svg">
     </div>
 </div>
 

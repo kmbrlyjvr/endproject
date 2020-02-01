@@ -77,6 +77,9 @@ Route::middleware('auth')->group(function() {
 });
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
+Route::get('/{blog}', 'BlogController@show')->name('blog.show');
+
+
 
 Route::get('/login', 'AuthController@login')->name('auth.login')->middleware('guest');
 Route::post('/login', 'AuthController@postLogin')->name('auth.postLogin')->middleware('guest');

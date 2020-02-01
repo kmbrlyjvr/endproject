@@ -1,7 +1,7 @@
 <template>
 <div>
     
-   <svg v-if="type=='trouser'" id="Layer_1" class="trouser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.52 284.47" :style="svgStyleProps">
+   <svg v-if="type=='trouser'" id="Layer_1" class="trouser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.66 273.5" :style="svgStyleProps">
 
             <title>trousers slacks</title>
             <g v-bind:style="{ 'stroke': config.trouserColor}">

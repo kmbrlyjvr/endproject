@@ -74,6 +74,11 @@ class AdminController extends Controller
         return view('admin.blogpost.edit', compact('blog'));
     }
 
+    public function show(Blog $blog)
+    {
+        return view('blog.show', compact('blog'));
+    }
+
     public function update(Request $request, Blog $blog)
     {
         $this->validate($request, [

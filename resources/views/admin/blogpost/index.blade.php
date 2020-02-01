@@ -6,18 +6,24 @@
 <div class="defaultcontainer">
         <h2 class="title">Upload new Blogpost</h1>
             <div class="blogadmincontainer">
-                <form class="form" id="form"  action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
+
+                <form class="blogadminform" id="form"  action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <input type="hidden" name="type"/>
                     @csrf
                             <br>
                             <div class="form-admin-group">
                                 <label for="title">Title</label><br>
-                                <input type="text" name="title" id="title" value="{{ old('title') }}">
+                               <input type="text" name="title" id="title" value="{{ old('title') }}">
                             </div>
                             <br>
                             <div class="form-admin-group">
                                 <label>Text</label>
-                                <textarea class="form-control" style="height:200px" name="text">{{ old('text') }}</textarea>
+                               <!-- <textarea class="form-control" style="height:200px" name="text">{{ old('text') }}</textarea>-->
+
+                                <textarea placeholder="Blogpost ." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; ">
+                                {{ old('text') }}
+                                </textarea>  
+		                        <br>
                             </div>
                             <div class="form-admin-group">
                                     <label for="bigtext">Phrase</label><br>

@@ -3,17 +3,14 @@
 
 <div class="defaultcontainer">
 <h2 class="title">Cart Summary</h2>
+
 <!-- RETURN (BACK) BUTTON -->
 <a href="{{ URL::previous() }}" class="back_button">Back</a> 
 
 <div class="summary">
-    <!--
-    <div class="svgrenderorder">
-        <img class="summaryimage" src="{{ route('order.renderSvgSession') }}" />
-    </div>-->
+
 
     <div class="img-magnifier-container svgrenderorder">
-
         <img class="summaryimage" id="summaryimg"   src="{{ route('order.renderSvgSession') }}"  width="600" height="600" alt="colored overall">
     </div>
 
@@ -41,56 +38,15 @@
                     <td>{{ $total }}€</td>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="form-group">
-                            <div class="form-label-grou2">
-                                <label for="address">Address</label>
-                                <select name="address" id="address">
-                                        <option value="Pending"><option>
-                                </select>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
                     <td>PAYMENT</td>
+                    <td><select name="payment" class="custompayment">
+                        <option value="default">Please Select</option>
+                            <option value="Visa">Visa</option>
+                            <option value="Paypal">Paypal</option>
+                    </select></td>
                 </tr>
-                <tr>
-                <td>
-
-                   <div class="form-group">
-                    <div class="form-label-group2">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                </div>
-                    <div class="form-group">
-                    <div class="form-label-group2">
-
-                        <label for="number">Number</label>
-                        <input type="text" class="form-control" id="number" name="number">
-                    </div>
-                </div>
-
-                    <div class="form-group">
-                            <div class="form-label-group2">
-
-                        <label for="ccv">CCV</label>
-                        <input type="text" class="form-control" id="ccv" name="ccv">
-                    </div>
-                </div>
-
-                    <div class="form-group">
-                            <div class="form-label-group2">
-
-                        <label for="expires">Expire Date</label>
-                        <input type="text" class="form-control" id="expires" name="expires">
-                    </div>
-                </div>
-                </div>
-                </td>
-                </tr>
-                <tr>    
+                       
+                 
                     <td>
                         @if(auth()->check())
                             <a class="button" href="{{ route('order.receipt') }}">Order</a>
