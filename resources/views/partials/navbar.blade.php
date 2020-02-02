@@ -4,7 +4,7 @@
             <li><a href="/about">about</a></li>
             <li><a href="{{ route('items.index') }}">customize</a></li>
             <a href="{{ route('home') }}" class="logo">
-              <img src="/svgs/logo.svg">
+              <img src="/svgs/logo.svg" alt="sinta logo">
             </a>
 
 

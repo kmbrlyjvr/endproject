@@ -39,9 +39,23 @@ body {
   white-space: nowrap;
 }
 
+.herocontainer {
+  margin: -80px 0;
+}
+
 .hero {
   display: flex;
   justify-content: center;
+}
+
+.herotrouser {
+  position: absolute;
+  z-index: 7;
+}
+
+.herotrouser img {
+  width: 20em;
+  margin: 2vh 65vh;
 }
 
 .hero img {
@@ -51,11 +65,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
   width: 176vh;
-  opacity: 1;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  bottom: 0;
+  position: absolute;
 }
 .hero2 img {
   position: relative;
@@ -63,7 +73,8 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  width: 176vh;
+  margin: 90vh 50vh;
+  width: 80vh;
 }
 
 .logo-hero {
@@ -117,24 +128,28 @@ body {
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  font-family: var(--sec-font);
+  font-family: var(--main-font);
   font-size: 1.5em;
   color: var(--main);
   text-transform: uppercase;
-  margin: 20vh 0;
-  width: 150vh;
-  height: 50vh;
+  margin: -90vh 10vh;
+  width: 60vh;
+  height: 80vh;
+}
+
+.thiscontainer {
+  margin: 100vh 0;
 }
 
 .this {
   display: flex;
   justify-content: center;
   position: absolute;
-  font-family: var(--main-font);
-  font-size: 2em;
-  color: var(--main);
+  font-family: var(--sec-font);
+  font-size: 3em;
+  color: var(--nude);
   text-transform: uppercase;
-  margin: 80vh 0;
+  margin: 40vh -30vh;
   width: 150vh;
 }
 
@@ -144,11 +159,11 @@ body {
   display: flex;
   justify-content: center;
   position: absolute;
-  font-family: var(--main-font);
-  font-size: 2em;
-  color: var(--main);
+  font-family: var(--sec-font);
+  font-size: 3em;
+  color: var(--nude);
   text-transform: uppercase;
-  margin: 100vh 0;
+  margin: 130vh -30vh;
   width: 150vh;
 }
 
@@ -157,7 +172,29 @@ body {
   width: 20vh;
 }*/
 
+.designer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 180vh;
+  height: 160vh;
+  margin-left: 60vh;
+}
 
+.designer h1 {
+  font-size: 2.5em;
+  font-family: var(--sec-font);
+  color: var(--main);
+}
+
+.designer p {
+  text-align: center;
+}
+
+.designer img {
+  width: 30em;
+}
 
 /* ##### defaults ##### */
 
@@ -297,10 +334,12 @@ footer a.active {
   justify-items: center;
   flex-direction: column;
   text-align: center;
+  margin: -180vh 0;
 }
 
 .instructions {
   margin: 0 55vh 0;
+
 }
 
 .instructions p {
@@ -1605,6 +1644,43 @@ html {
   text-transform: uppercase;
 }
 
+/* ##### HOME ##### */
+
+.hero img {
+  width: 86vh;
+}
+
+.desc {
+  margin-left: 40vh;  
+  font-size: 3em;
+}
+
+.desc p {
+  width: 35vh;
+}
+
+.thiscontainer {
+  margin: 60vh 0;
+}
+
+.this {
+  margin: 30vh -50vh;
+}
+
+.this2 {
+  margin: 100vh -50vh;
+}
+
+.herotrouser img {
+  width: 30em;
+    margin: 2vh 30vh;
+}
+
+.hero2 img {
+  margin: 70vh 15vh;
+  width: 60vh;
+}
+
 .loginreg {
   display: flex;
   justify-content: flex-start;
@@ -1722,6 +1798,85 @@ textarea::placeholder {
   height: 225vh;
 }
 
+.generator {
+  margin: -120vh 0;
+}
+
+.instructions {
+  margin: 0;
+}
+
+.instructions p {
+  font-size: 3em;
+}
+
+.designer {
+  margin-top: 100vh;
+  margin-left: 30vh;
+  height: 100vh;
+}
+
+.helpcontainer {
+  font-size: 1.5em;
+}
+
+.shipping {
+  width: 60vh;
+  margin: 30vh 20vh 0;
+}
+
+.terms {
+  font-size: 2em;
+  overflow-y: scroll;
+}
+
+.termstext {
+  margin: 20vh 40vh 0;
+  height: 210vh;
+}
+
+.termstext p {
+  width: 70vh;
+}
+
+.blogcontainer {
+  height: 160vh;
+}
+
+.designername  {
+  width: 100px;
+  margin: 2vh -30vh;
+  font-size: 4em;
+  color: #fff;
+}
+
+.bigtext {
+  font-size: 4em;
+  width: 80vh;
+  margin-left: 5vh;
+  margin-top: -80vh;
+}
+
+
+.blogcontainer img {
+  width: 86vh;
+}
+
+.blogpost {
+  display: flex;
+  justify-content: center;
+}
+
+.blogpost p {
+  font-size: 2em;
+  /* width: 150vh; */
+  margin-top: 70vh;
+}
+
+.blogpost img {
+  width: 30em;
+  margin: 80vh 0;
+  margin-left: 5vh;}
 
 /* ##### PROFILE / EDIT ##### */
 
