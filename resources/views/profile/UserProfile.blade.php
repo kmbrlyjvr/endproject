@@ -6,7 +6,7 @@
     <div class="profilecontainer">
         
             @foreach($users as $user)
-                <h2><span class="highlightnude">{{ $user->name }}</span></h2>
+                <h2 style="color:var(--main);" ><span class="highlightnude">{{ $user->name }}</span></h2>
                     <table class="tableprofile">
                             <tr>
                                 <td>E-Mail</td>
@@ -23,42 +23,47 @@
                     </table>
             @endforeach
 
-        <a href="{{ route('profile.edit', $user->id) }}">Edit</a>
+        <a href="{{ route('profile.edit', $user->id) }}">Edit</a><br><br><br>
 
 
-        <h2><span class="highlightnude">Orders</span></h2>
+        <h2 style="color:var(--main);"><span class="highlightnude">Orders</span></h2>
 
             <div class="tablecontainer">
-
-
-                <table class="tableorders">
-
-    
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Size</th>
-                            <th>Address</th>
-                            <th>Payment</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                
-                <tbody>
+                <table class="tableprofile">
                         @foreach($orders as $order)
 
-                    <tr>
-                        <td>{{ json_decode($order->config)->type }}</td>
-                        <td>{{ json_decode($order->config)->size }}</td>
-                        <td>{{ $user->address }} {{ $user->zip }}</td>
-                        <td>{{ $order->payment }}</td>
-                        <td>{{ $order->created_at->format('d/m/Y') }}</td>
-                        <td>{{ $order->status }}</td>
+                        <tr>
+                            <td>Product</td>
+                            <td>{{ json_decode($order->config)->type }}</td>
+                        </tr>
 
-                    </tr>
-                </tbody>
-                @endforeach
+                        <tr>
+                            <td>Size</td>
+                            <td>{{ json_decode($order->config)->size }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Address</td>
+                            <td>{{ $user->address }} {{ $user->zip }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Payment</td>
+                            <td>{{ $order->payment }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Date</td>
+                            <td>{{ $order->created_at->format('d/m/Y') }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Status</td>
+                            <td>{{ $order->status }}</td>
+                        </tr>
+                        @endforeach
+
+                </table>
 
             </table>
         </div>

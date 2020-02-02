@@ -31,7 +31,7 @@
 					<div class="form-group">
                             <div class="form-label-group2">
                                 <label>ZIP Code</label>
-                                <input type="text" class="form-control" name="zip" value="{{ $user->zip }}" required>
+                                <input  type="text" class="form-control" name="zip" value="{{ $user->zip }}" required>
                             </div>
                         </div>
 

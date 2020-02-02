@@ -68,6 +68,8 @@
 </div>
 <script>
 
+/* MAGNIFIER from w3schools */
+
 function magnify(summaryimg, zoom) {
       var img, glass, w, h, bw;
       img = document.getElementById(summaryimg);

@@ -76,8 +76,6 @@ Route::middleware('auth')->group(function() {
 
 });
 
-Route::get('/blog', 'BlogController@index')->name('blog.index');
-Route::get('/{blog}', 'BlogController@show')->name('blog.show');
 
 
 
@@ -90,6 +88,10 @@ Route::post('/signup', 'AuthController@postSignup')->name('auth.postSignup')->mi
 Route::get('/profile', 'ProfileController@profile')->name('profile');
 Route::get('/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::put('/{id}', 'ProfileController@update')->name('profile.update');
+
+Route::get('/blog', 'BlogController@index')->name('blog.index');
+Route::get('/{blog}', 'BlogController@show')->name('blog.show');
+
 
 Route::get('/imageUpload', 'ImageUploadController@imageUpload')->name('image.upload');
 Route::post('/imageUpload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');

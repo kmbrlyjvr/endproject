@@ -3,8 +3,9 @@
 @section('container')
 
 <div class="defaultcontainer">
+        <h2 class="title">Choose Trouser</h2>
+
     <div class="trouserscontainer2">
-        <h2 class="title2">Choose Trouser</h2>
 
 
         @foreach ($items as $item)
