@@ -2,10 +2,10 @@
 @section('container')
 
 <div class="defaultcontainer">
-        <div class="generator">
+        <div class="generatortwo">
                 <h2 class="title3">How to use it</h2>
 
-            <div class="instructions">
+            <div class="instructionstwo">
 
 
                     <p class="title2">1. Sign Up / Log in</p>

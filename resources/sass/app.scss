@@ -337,9 +337,24 @@ footer a.active {
   margin: -180vh 0;
 }
 
+.generatortwo {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.instructionstwo {
+  margin: 0 55vh 0;
+}
+
+.instructionstwo p {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 .instructions {
   margin: 0 55vh 0;
-
 }
 
 .instructions p {
@@ -1876,7 +1891,20 @@ textarea::placeholder {
 .blogpost img {
   width: 30em;
   margin: 80vh 0;
-  margin-left: 5vh;}
+  margin-left: 5vh;
+}
+
+.generatortwo {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.instructionstwo {
+  margin: 0;
+}
+
 
 /* ##### PROFILE / EDIT ##### */
 

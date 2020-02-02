@@ -373,6 +373,25 @@ footer a.active {
   margin: -180vh 0;
 }
 
+.generatortwo {
+  display: -webkit-box;
+  display: flex;
+  justify-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+}
+
+.instructionstwo {
+  margin: 0 55vh 0;
+}
+
+.instructionstwo p {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 .instructions {
   margin: 0 55vh 0;
 }
@@ -2001,6 +2020,20 @@ nav.main-menu li.active > a,
     width: 30em;
     margin: 80vh 0;
     margin-left: 5vh;
+  }
+
+  .generatortwo {
+    display: -webkit-box;
+    display: flex;
+    justify-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    text-align: center;
+  }
+
+  .instructionstwo {
+    margin: 0;
   }
 
   /* ##### PROFILE / EDIT ##### */
