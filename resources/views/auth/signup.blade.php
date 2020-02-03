@@ -76,7 +76,7 @@
 						</div>
 					</div>
 
-					<button class="button" type="submit" class="btn btn-primary">Sign up</button>
+					<button class="button" type="submit">Sign up</button>
 					<p>Already a member? <a href="{{ route('auth.login') }}">Login</a></p>
 
 				</form>
