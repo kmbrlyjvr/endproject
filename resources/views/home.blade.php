@@ -11,9 +11,9 @@
     </div>
 <!--<div class="logo-hero"><img src="/imgs/logo_colored.svg" alt="logo sinta"></div>-->
     <div class="thiscontainer">
-        <div class="this">FROM THIS</div>
+        <p class="this">FROM THIS</p>
         <div class="herotrouser"><img src="designers/alealitrouserarts.svg" alt="grene illustrated trouser"/></div>
-        <div class="this2">TO THIS</div>
+        <p class="this2">TO THIS</p>
         <div class="hero2"><img  src="designers/alealitrouser1.jpg" alt="illustration of green trousers"></div>
         <h2 class="title"><span class="highlightnude">ALEALI MAY</span></h2>
     </div>

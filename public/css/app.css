@@ -1785,13 +1785,18 @@ nav.main-menu li.active > a,
     width: 86vh;
   }
 
+  .hero2 {
+    width: 86vh;
+  }
+
   .desc {
-    margin-left: 40vh;
+    width: 86vh;
+    margin-left: 5vh;
     font-size: 3em;
   }
 
   .desc p {
-    width: 35vh;
+    width: 30vh;
   }
 
   .thiscontainer {
@@ -1799,11 +1804,19 @@ nav.main-menu li.active > a,
   }
 
   .this {
-    margin: 30vh -50vh;
+    font-size: 4em;
+    margin-top: 25vh;
+    margin-left: -60vh;
   }
 
   .this2 {
-    margin: 100vh -50vh;
+    font-size: 4em;
+    margin-top: 100vh;
+    margin-left: -60vh;
+  }
+
+  .herocontainer {
+    width: 86vh;
   }
 
   .herotrouser img {
@@ -1876,24 +1889,28 @@ nav.main-menu li.active > a,
     background-position: center;
     background-attachment: fixed;
     background-blend-mode: overlay;
-    width: 100%;
+    width: 86vh;
+  }
+
+  .form-label-group {
+    color: var(--black);
   }
 
   .formcontainer .row {
-    color: white;
-    line-height: 3;
-    position: absolute;
     display: -webkit-box;
     display: flex;
-    -webkit-box-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    align-content: center;
-    width: 400px;
-    height: 500px;
-    opacity: 0.8;
+    -webkit-box-align: center;
+            align-items: center;
+    color: var(--black);
+    line-height: 2.5;
+    font-size: 1.5em;
+    margin: 0;
+    padding-top: 85vh;
+    width: 85vh;
+  }
+
+  .form-group input {
+    width: 650px;
   }
 
   .button {
