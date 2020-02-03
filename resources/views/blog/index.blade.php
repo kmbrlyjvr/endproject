@@ -12,7 +12,7 @@
      <div class="bloghomepost">
     @foreach($blogs as $blog)
 
-   <h2 class="title2"><span class="highlightnude"> <a class="bloglink" href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a></span></h2>
+   <h2 class="title2"><span class="highlightnude"><a class="bloglink" href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a></span></h2>
 
     @endforeach 
     </div>

@@ -45,6 +45,6 @@ class AdminOrdersController extends Controller
         $order->fill($request->all());
         $order->save();
 
-        return redirect()->route('admin.order.index', [$order->id])->with('success', 'Order updated');
+        return redirect()->route('admin.order.index', [$order->id]);
     }
 }

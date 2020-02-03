@@ -21,10 +21,10 @@
             </div>
         </div>
         <div class="aboutlogo">
-                <img src="imgs/logo_transparent.svg">
-                <img src="imgs/logo_transparent.svg">
-                <img src="imgs/logo_transparent.svg">
-                <img src="imgs/logo_transparent.svg">
+                <img src="imgs/logo_transparent.svg" alt="sinta logo">
+                <img src="imgs/logo_transparent.svg" alt="sinta logo">
+                <img src="imgs/logo_transparent.svg" alt="sinta logo">
+                <img src="imgs/logo_transparent.svg" alt="sinta logo">
         </div><br>
 
     <div class="aboutinfos">
@@ -47,19 +47,16 @@
                  also able to sew clothes in the comfort of their homes. Such a small factory can only produce 
                  a reasonable amount of clothing and since SINTAvalues quality, sustainability and ethical 
                  production - slow fashion is the perfect way to express it.
+            </p>
+
 
                  <div class="productionimgs">
                      <img src="imgs/production1.jpg" alt="woman who's organizing trousers">
                      <img src="imgs/production2.jpg" alt="woman who's organizing trousers">
                      <img src="imgs/production3.jpg" alt="woman who's organizing trousers">
-
                  </div>
-
                  <br>      
                  <br>
-
-            </p>
-
         </div>
         <!-- Sustainability -->
             <div class="aboutsustain">

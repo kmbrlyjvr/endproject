@@ -124,14 +124,14 @@ class OrderController extends Controller
         $data['user_id'] = \Auth::user()->id;
 
 
-        $message = "Order Successful!";
+        //$message = "Order Successful!";
         $order = Orders::create($data);
         
-        if(!$order) {
+       /* if(!$order) {
             $message = "failed!";
-        }
+        }*/
 
-        $request->session()->flash('status', $message);
+       // $request->session()->flash('status', $message);
         
         return view ('order.receipt', [
             'order' => $order, 

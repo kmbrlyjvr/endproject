@@ -7,24 +7,25 @@
         <div class="formcontainerlogin">
             <!--<img class="loginbg" src="imgs/water1.jpg" /> -->
             <div class="row">
-                    <form action="{{ route('auth.login') }}" method="post" autocomplete="on">
-                        @csrf
-    
-                        <div class="form-group">
-                            <div class="form-label-group2">
-                                <label> E-Mail </label>
-                                <input type="email" class="form-control" name="email" required>
-                            </div>
+                <form action="{{ route('auth.login') }}" method="post" autocomplete="on">
+                    @csrf
+
+                    <div class="form-group">
+                        <div class="form-label-group2">
+                            <label> E-Mail </label>
+                            <input type="email" class="form-control" name="email" required>
                         </div>
-    
-                        <div class="form-group">
-                            <div class="form-label-group2">
-                                <label>Password</label>
-                                <input type="password" class="form-control" name="password" required>
-                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-group2">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" required>
                         </div>
-                    <button class="button" type="submit" class="btn btn-primary">Login</button>
-                    <p>Not a member yet? <a href="{{ route('auth.signup') }}">Sign Up</a></p>
+                    </div>
+                <button class="button" type="submit">Login</button>
+                <p>Not a member yet? <a href="{{ route('auth.signup') }}">Sign Up</a></p>
+                </form>
             </div>
         </div>
     </div>

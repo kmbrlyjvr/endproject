@@ -5,14 +5,14 @@
     <h2 class="title">RECEIPT</h2>
  
     <div class="receipt">
-        <img src="/svgs/logo.svg">
+        <img src="/svgs/logo.svg" alt="sinta logo">
             <div class="receiptsmall"> 
                                 
-                    @if(session('status'))
+                  <!--  @if(session('status'))
                     <div class="status" style="visibility:hidden;">
                         {{ session('status') }}
                     </div>
-                    @endif
+                    @endif-->
 
                 <table>
                     <tbody>

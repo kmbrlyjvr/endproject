@@ -9,6 +9,8 @@
  <link href="https://fonts.googleapis.com/css?family=Lekton&display=swap" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+ <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
  <!-- Scripts -->

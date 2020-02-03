@@ -54,6 +54,12 @@ body {
   margin: 2vh 65vh;
 }
 
+.thiscontainer h2 {
+  position: absolute;
+  z-index: 7;
+  margin: -85vh 0;
+}
+
 .hero img {
   position: relative;
   background-size: cover;
@@ -1430,6 +1436,19 @@ td {
 }
 
 /* ##### ADMIN DASHBOARD ##### */
+
+.adminlist {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  width: 40vh;
+  margin-top: 30vh;
+  margin-left: -20vh;
+}
 
 .tableadmincontainer {
   grid-column-start: 6;

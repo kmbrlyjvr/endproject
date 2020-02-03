@@ -15,6 +15,7 @@
         <div class="herotrouser"><img src="designers/alealitrouserarts.svg" alt="grene illustrated trouser"/></div>
         <div class="this2">TO THIS</div>
         <div class="hero2"><img  src="designers/alealitrouser1.jpg" alt="illustration of green trousers"></div>
+        <h2 class="title"><span class="highlightnude">ALEALI MAY</span></h2>
     </div>
 
         <div class="generator">

@@ -34,7 +34,7 @@ class AdminUserController extends Controller
         $user->fill($request->all());
         $user->save();
 
-        return redirect()->route('admin.user.index')->with('success', 'User updated!');
+        return redirect()->route('admin.user.index');
 
     }
 }

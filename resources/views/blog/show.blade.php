@@ -18,7 +18,7 @@
             </div>
     </div>
        <div class="blogimagessmall">
-            <div class="bigtextcontainer"><h2 class="bigtext"> <span class="highlightbigtext">{{ $blog->bigtext }}</span><h2></div>
+            <div class="bigtextcontainer"><h3 class="bigtext"><span class="highlightbigtext">{{ $blog->bigtext }}</span></h3></div>
             <div class="blogimagethree"><img src="{{ asset('storage/' . $blog->imagethree)}}" alt="girl and sneakers"></div>
             <div class="blogimagefour"><img src="{{ asset('storage/' . $blog->imagefour)}}" alt="girl and sneakers"></div>
        </div>       

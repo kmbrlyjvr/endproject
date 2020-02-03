@@ -58,7 +58,7 @@ class AdminController extends Controller
         $blog->imagefour = $pathImagefour;
         $blog->save();
 
-        return redirect()->route('admin.blogpost', $blog->id)->with('success', 'Blog created!');
+        return redirect()->route('admin.blogpost', $blog->id);
     }
 
 
@@ -90,14 +90,8 @@ class AdminController extends Controller
         $blog->is_published = $request->has('is_published');
         $blog->save();
 
-        return redirect()->route('admin.blogpost.index', $blog->id)->with('success', 'Blog updated!');
+        return redirect()->route('admin.blogpost.index', $blog->id);
     }
 
-    public function destroy(Blog $blog)
-    {
-        $blog->delete();
-
-        return redirect()->route('admin.blogpost.index')->with('success', 'Blogpost deleted!');
-    }
 }
 

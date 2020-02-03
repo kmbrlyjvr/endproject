@@ -46,7 +46,7 @@
                     </select></td>
                 </tr>
                        
-                 
+                 <tr>
                     <td>
                         @if(auth()->check())
                             <a class="button" href="{{ route('order.receipt') }}">Order</a>
@@ -59,7 +59,7 @@
                             </p>
                             @endif
                         </td>
-                </tr>
+                    </tr>
             </tbody>
         </table>
 
