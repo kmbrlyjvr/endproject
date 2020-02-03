@@ -1714,6 +1714,8 @@ html {
   width: 86vh;
 }
 
+
+
 .herotrouser img {
   width: 30em;
     margin: 2vh 30vh;
@@ -1847,6 +1849,7 @@ textarea::placeholder {
 .aboutinfos {
   font-size: 2em;
   height: 225vh;
+  width: 86vh;
 }
 
 .generator {
@@ -1892,6 +1895,16 @@ textarea::placeholder {
 
 .blogcontainer {
   height: 160vh;
+}
+
+.bloghero img{
+  width: 86vh;
+  height: 160vh;
+}
+
+.bloghomepost h2 {
+  font-size: 7em;
+  margin-top: 20vh;
 }
 
 .designername  {

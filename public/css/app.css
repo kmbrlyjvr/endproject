@@ -1974,6 +1974,7 @@ nav.main-menu li.active > a,
   .aboutinfos {
     font-size: 2em;
     height: 225vh;
+    width: 86vh;
   }
 
   .generator {
@@ -2019,6 +2020,16 @@ nav.main-menu li.active > a,
 
   .blogcontainer {
     height: 160vh;
+  }
+
+  .bloghero img {
+    width: 86vh;
+    height: 160vh;
+  }
+
+  .bloghomepost h2 {
+    font-size: 7em;
+    margin-top: 20vh;
   }
 
   .designername {
