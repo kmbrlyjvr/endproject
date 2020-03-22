@@ -228,7 +228,7 @@ export default {
 
       :root {
         --var-trouser-color: #b48f80;
-        --var-pocket-color: #6e503d;
+        --var-pocket-color: #ceb7a6;
         --var-logo-color: #f3f1a0;    
   
         }

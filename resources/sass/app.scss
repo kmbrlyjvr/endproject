@@ -70,7 +70,9 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  width: 176vh;
+  /*width: 176vh;*/
+  width: 50vh;
+  margin: 10vh 3vh 0;
   position: absolute;
 }
 .hero2 img {
@@ -114,19 +116,18 @@ body {
 
 .desc {
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+  justify-content: center;
   position: absolute;
   font-family: var(--sec-font);
   font-size: 2.5em;
   color: var(--main);
   text-transform: uppercase;
-  margin: 20vh 0;
+  margin: 10vh 0;
   width: 150vh;
 }
 
 .desc p {
-  width: 50vh;
+  width: 60vh;
 }
 
 .desc1 {
@@ -141,6 +142,21 @@ body {
   margin: -90vh 10vh;
   width: 60vh;
   height: 80vh;
+}
+
+.star {
+  visibility: hidden;
+}
+
+.fadeIn {
+  -webkit-animation: animat_show 0.9s;
+  animation: animat_show 0.9s;
+  visibility: visible !important;
+}
+
+@-webkit-keyframes animat_show{
+  0%{opacity:0}
+  100%{opacity:1}
 }
 
 .thiscontainer {
@@ -1219,11 +1235,8 @@ button {
 
 .bloghomepost {
   position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  width: 70vh;
-  margin: 30vh 0;
+  width: 50vh;
+  margin: 30vh 2vh 0;
 }
 
 .bloghomepost p {
@@ -1251,24 +1264,34 @@ button {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin: 30vh 0;
+  margin: 20vh 40vh 0;
 }
 
-.blogpost p {
-  color: white;
-  width: 40vh;
+.blogtextcontainer {
+  background-color: var(--nude);
+}
+
+.blogtext  {
+  margin: -10vh 50vh 0;
+  line-height: 2;
+  color: var(--main);
+}
+
+.blogtext p {
+  width: 80vh;
 }
 
 .designername {
   position: absolute;
   font-family: 'Racing Sans One', cursive;  
-  color: #b38383;
-  font-size: 3em;
-  width: 40px;
+  color:var(--nude);
+  font-size: 5em;
+  width: 60px;
+  margin: 1vh -90vh 0;
 }
 
 .blogheroimage img{
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .blogpost img {
@@ -1678,7 +1701,9 @@ html {
 /* ##### HOME ##### */
 
 .hero img {
-  width: 86vh;
+  /*width: 86vh;*/
+  width: 40vh;
+  margin: -40vh;
 }
 
 .hero2 {

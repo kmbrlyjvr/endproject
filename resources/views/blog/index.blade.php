@@ -7,7 +7,9 @@
 <a href="{{ URL::previous() }}" class="back_button">Back</a> 
 
 <div class="bloghomecontainer">
-     <div class="bloghero"><img src="imgs/blackpaper.jpg" alt="black paper" /></div>
+     <div class="bloghero"><img src="imgs/bg1.jpg" style="opacity:0.8;" alt="multiple pic for stylish girl" /></div>
+
+     <!-- <img src="imgs/blackpaper.jpg" alt="black paper" / -->
 
      <div class="bloghomepost">
     @foreach($blogs as $blog)

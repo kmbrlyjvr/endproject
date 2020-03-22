@@ -32,8 +32,6 @@ class OrderController extends Controller
         'total' => $shipping->price + $item->price,
 
         ]);
-
-
     }
 
     /**
@@ -111,7 +109,6 @@ class OrderController extends Controller
         $users = User::where("id", Auth::user()->id)->get();
         $shipping = ShippingCost::query()->where('id', $order['shipping'])->first();
         $item = Item::query()->where('text', $order['type'])->first();
-
 
         $data = [];
         $data ['config'] = json_encode($config);
