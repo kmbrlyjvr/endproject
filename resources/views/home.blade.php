@@ -45,7 +45,7 @@
 
 @endsection
 
-    /*   function showImages(el) {
+    <!--   function showImages(el) {
             var windowHeight = jQuery( window ).height();
             $(el).each(function(){
                 var thisPos = $(this).offset().top;
@@ -102,4 +102,4 @@ const images = document.querySelectorAll("[src]");
         images.forEach(image => {
             imgObserver.observe(image);
         });*/
-  
+    -->
