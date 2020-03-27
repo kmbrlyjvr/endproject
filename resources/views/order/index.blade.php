@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('container')
 
-<div class="defaultcontainer">
-<h2 class="title">Cart Summary</h2>
+<section class="defaultcontainer">
+<h2 class="title outer">Cart Summary</h2>
 
 <!-- RETURN (BACK) BUTTON -->
 <a href="{{ URL::previous() }}" class="back_button">Back</a> 
@@ -11,10 +11,10 @@
 
 
     <div class="img-magnifier-container svgrenderorder">
-        <img class="summaryimage" id="summaryimg"   src="{{ route('order.renderSvgSession') }}"  width="600" height="600" alt="colored overall">
+        <img class="summaryimage inner" id="summaryimg"   src="{{ route('order.renderSvgSession') }}"  width="600" height="600" alt="colored overall">
     </div>
 
-    <div class="summarytable">
+    <div class="summarytable inner">
         <table>
             <tbody>
                 <tr>
@@ -65,7 +65,7 @@
 
     </div>
 </div>
-</div>
+</section>
 <script>
 
 /* MAGNIFIER from w3schools */
