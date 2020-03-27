@@ -144,14 +144,11 @@ body {
   height: 80vh;
 }
 
-.star {
-  visibility: hidden;
-}
-
 .fadeIn {
   -webkit-animation: animat_show 0.9s;
   animation: animat_show 0.9s;
   visibility: visible !important;
+  
 }
 
 @-webkit-keyframes animat_show{
@@ -1043,6 +1040,11 @@ button {
 
 .homecontainer h2 {
   padding: 100px;
+}
+
+.inner {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .home-inner {

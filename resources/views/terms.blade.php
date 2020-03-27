@@ -1,11 +1,11 @@
 @extends('layouts.master')
 @section('container')
 
-<div class="defaultcontainer">
+<section class="defaultcontainer">
 
-<h2 class="title">Terms & Conditions</h2>
+<h2 class="title outer">Terms & Conditions</h2>
 
-<div class="terms">
+<div class="terms inner">
     <div class="termstext">
     <p style="color:var(--black);">     
             Standard Business Terms and customer information<br><br>
@@ -123,5 +123,5 @@
     </p>
 </div>
 </div>
-</div>
+</section>
 @endsection

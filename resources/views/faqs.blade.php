@@ -1,10 +1,12 @@
 @extends('layouts.master')
 @section('container')
 
-<div class="defaultcontainer">
+<section class="defaultcontainer">
+    
+    <h2 class="title outer">Frequently Asked Questions </h2>
 
-<h2 class="title">Frequently Asked Questions </h2>
-<div class="terms">
+<section class="terms inner">
+
         <div class="termstext">
     <p>
         <br><br>HOW TO USE GENERATOR
@@ -67,6 +69,6 @@
 
     </p>
 </div>
-</div>
-</div>
+</section>
+</section>
 @endsection

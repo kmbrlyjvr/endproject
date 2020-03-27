@@ -25,7 +25,7 @@
                     </li>
 
                     <li class="userlogout">
-                            <a class="nav-link" href="{{ route('auth.logout') }}">Logout<i class="fa fa-hand-peace-o" aria-hidden="true"></i></a>
+                            <a class="nav-link" href="{{ route('auth.logout') }}">Logout</a>
                     </li>
                     @endif
                   <!-- 
@@ -45,10 +45,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
-    <script src="{{ asset('js/gsap.js') }}"></script>
    
 @stack('scripts')
 </body>

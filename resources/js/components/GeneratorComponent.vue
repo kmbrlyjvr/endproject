@@ -74,11 +74,11 @@
     </div><!-- custom nav -->
 
 
-<div class="trouser">
-    <div class="trousers trousers-1">
+<section class="trouser">
+    <div class="trousers trousers-1 fade">
             <svg-component :config="config" :type="type"></svg-component>
     </div>
-</div>
+</section>
 
 </div>
 
@@ -119,6 +119,7 @@ export default {
                 pocketColor: "#ceb7a6",
                 logoColor: "#f3f1a0",
                 pocketChange: null,
+                price: "",
                 size: "Small",
                 shipping: null,
             },

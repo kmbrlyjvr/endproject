@@ -4,14 +4,14 @@
 <div class="defaultcontainer">
     <h2 class="title">about</h2>
 
-    <div class="aboutcontainer">
+    <section class="aboutcontainer outer">
         <!--<a href="{{ URL::previous() }}" class="back_button">Back</a> -->
 
-        <div class="aboutheroimage"><img src="imgs/blackwater.jpg" alt="black water"></div>
+        <div class="aboutheroimage fadeIn"><img src="imgs/blackwater.jpg" alt="black water"></div>
             <div class="aboutpost">
-            <h2>story of sinta</h2>
+            <h2 class="outer">story of sinta</h2>
 
-            <p>The idea of SINTA started at the beginning of 2018 when founder Kimberly Javier wanted to create a conscious brand that neither exploited our planet or workers, yet still designed with quality 
+            <p class="inner">The idea of SINTA started at the beginning of 2018 when founder Kimberly Javier wanted to create a conscious brand that neither exploited our planet or workers, yet still designed with quality 
                 and ready to wear. The styles of our brand reflects the personal style of its founders - gender fluid, comfort, personalized and wardrobe staples that can be restyled and reworn for a long time. 
                 Kimberly partnered with Aljohn Rosimo in the creative process and started sourcing and researching fabrics and manufacturers in Vietnam in March 2018. Although a few fashion companies had 
                 sought out to work with Kimberly in founding the brand, she wanted to truly grow as an entrepreneur and decided to invest independently to create SINTA and also help independent Designers to make 
@@ -19,8 +19,8 @@
                 
             </p>
             </div>
-        </div>
-        <div class="aboutlogo">
+        </section>
+        <div class="aboutlogo fadeIn">
                 <img src="imgs/logo_transparent.svg" alt="sinta logo">
                 <img src="imgs/logo_transparent.svg" alt="sinta logo">
                 <img src="imgs/logo_transparent.svg" alt="sinta logo">
@@ -30,9 +30,9 @@
     <div class="aboutinfos">
 
         <!-- Production -->
-        <div class="aboutproduction">
-            <h2 class="title2">Production</h2>
-            <p>  
+        <section class="aboutproduction outer">
+            <h2 class="title2 inner">Production</h2>
+            <p class="inner">  
                  Transparency in the production is of high importance for SINTA, thus why every stage of 
                  the manufacturing and creative process has personally been sourced, inspected or created by 
                  its founders Kimberly Javier and Aljohn Rosimo. By choosing to work with smaller or private owned 
@@ -51,17 +51,17 @@
 
 
                  <div class="productionimgs">
-                     <img src="imgs/production1.jpg" alt="woman who's organizing trousers">
-                     <img src="imgs/production2.jpg" alt="woman who's organizing trousers">
-                     <img src="imgs/production3.jpg" alt="woman who's organizing trousers">
+                     <img class="inner" src="imgs/production1.jpg" alt="woman who's organizing trousers">
+                     <img class="inner" src="imgs/production2.jpg" alt="woman who's organizing trousers">
+                     <img class="inner" src="imgs/production3.jpg" alt="woman who's organizing trousers">
                  </div>
                  <br>      
                  <br>
-        </div>
+                </section>
         <!-- Sustainability -->
-            <div class="aboutsustain">
-                <h2 class="title2">Sustainability</h2>
-                <p> 
+            <section class="aboutsustain">
+                <h2 class="title2 fadeIn">Sustainability</h2>
+                <p class="fadeIn"> 
                     Minimizing our impact on the climate is a main priority for SINTA. In each 
                     part of the supply chain we have researched for the most feasible solution ranging 
                     from sourcing fabrics, materials, packaging and production.
@@ -81,8 +81,8 @@
                 </p>
                 <br>
                 <br>
-                <h2 class="title2">Contact</h2>
-                <p> <span class="highlightnude">contact@sinta.ph</span><br><br>
+                <h2 class="title2 fadeIn">Contact</h2>
+                <p> <span class="highlightnude inner">contact@sinta.ph</span><br><br>
                     Ground Level, Greenbelt 5, Legazpi St.,<br>
                     Ayala Center, Makati, Philippines<br>
                     Daily 11AM — 9PM<br><br>
@@ -91,11 +91,12 @@
                     Mon-Sat 8am - 6pm
                 </p>
                 <p class="links"><a href="/terms">Terms & Conditions</a></p>
-            </div>
+            </section>
             <br>
             <br>
             <p>© 2018 Sinta Philippines/Austria</p>
      </div>
+    </div>
 
 @endsection
 

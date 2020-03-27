@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('container')
 
-<div class="defaultcontainer">
-    <h2 class="title">Your Profile</h2>
+<section class="defaultcontainer">
+    <h2 class="title outer">Your Profile</h2>
     <div class="profilecontainer">
         
             @foreach($users as $user)
-                <h2 style="color:var(--main);" ><span class="highlightnude">{{ $user->name }}</span></h2>
-                    <table class="tableprofile">
+                <h2 style="color:var(--main);"><span class="highlightnude inner">{{ $user->name }}</span></h2>
+                    <table class="tableprofile inner">
                             <tr>
                                 <td>E-Mail</td>
                                 <td>{{ $user->email }}</td>
@@ -26,10 +26,10 @@
         <a href="{{ route('profile.edit', $user->id) }}">Edit</a><br><br><br>
 
 
-        <h2 style="color:var(--main);"><span class="highlightnude">Orders</span></h2>
+        <h2 style="color:var(--main);"><span class="highlightnude outer">Orders</span></h2>
 
             <div class="tablecontainer">
-                <table class="tableprofile">
+                <table class="tableprofile inner">
                         @foreach($orders as $order)
 
                         <tr>
@@ -67,5 +67,5 @@
                   </div>
               </div>
         </div>
-    </div>
+</section>
 @endsection
