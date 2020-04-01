@@ -30,8 +30,8 @@
     <div class="aboutinfos">
 
         <!-- Production -->
-        <section class="aboutproduction outer">
-            <h2 class="title2 inner">Production</h2>
+        <section class="aboutproduction">
+            <h2 class="title2 outer">Production</h2>
             <p class="inner">  
                  Transparency in the production is of high importance for SINTA, thus why every stage of 
                  the manufacturing and creative process has personally been sourced, inspected or created by 
@@ -50,18 +50,18 @@
             </p>
 
 
-                 <div class="productionimgs">
-                     <img class="inner" src="imgs/production1.jpg" alt="woman who's organizing trousers">
-                     <img class="inner" src="imgs/production2.jpg" alt="woman who's organizing trousers">
-                     <img class="inner" src="imgs/production3.jpg" alt="woman who's organizing trousers">
+                 <div class="productionimgs inner">
+                     <img src="imgs/production1.jpg" alt="woman who's organizing trousers">
+                     <img src="imgs/production2.jpg" alt="woman who's organizing trousers">
+                     <img src="imgs/production3.jpg" alt="woman who's organizing trousers">
                  </div>
                  <br>      
                  <br>
                 </section>
         <!-- Sustainability -->
             <section class="aboutsustain">
-                <h2 class="title2 fadeIn">Sustainability</h2>
-                <p class="fadeIn"> 
+                <h2 class="title2 outer">Sustainability</h2>
+                <p class="inner"> 
                     Minimizing our impact on the climate is a main priority for SINTA. In each 
                     part of the supply chain we have researched for the most feasible solution ranging 
                     from sourcing fabrics, materials, packaging and production.
@@ -97,6 +97,5 @@
             <p>© 2018 Sinta Philippines/Austria</p>
      </div>
     </div>
-
 @endsection
 

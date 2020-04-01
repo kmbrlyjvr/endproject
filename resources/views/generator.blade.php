@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('container')
 
-<div class="defaultcontainer">
-        <section class="generatortwo">
+<section class="defaultcontainer">
+        <div class="generatortwo">
                 <h2 class="title3 outer">How to use it</h2>
 
             <div class="instructionstwo">
@@ -17,7 +17,7 @@
                     <p class="title2 inner">5. Order and rock it</p>
                     <img class="outer" style="width: 50vh;"src="imgs/howto_buy.svg">
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 @endsection
     
