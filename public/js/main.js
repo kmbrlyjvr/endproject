@@ -8,15 +8,15 @@ window.addEventListener("load", function() {
   
   // Create scenes in jQuery each() loop
   $("section").each(function(i) {
-    var inner = $(this).find(".inner");
     var outer = $(this).find(".outer");
+    var inner = $(this).find(".inner");
     var tl = new TimelineMax();
     
-    tl.fromTo(outer, 0.25,  { y: '40px', opacity: 0 }, { y: 0, opacity: 1, ease:Power2.EaseInOut });
-  
-    tl.fromTo(inner, 0.25,  { y: '80px', opacity: 0 }, { y: 0, opacity: 1, ease:Power2.EaseInOut });
-  
-    
+      tl.fromTo(outer, 0.4, {y: '40px', opacity: 0}, {y: 0, opacity: 1, ease: Power2.EaseInOut })
+      tl.fromTo(inner, 0.4, {y: '60px', opacity: 0}, {y: 0, opacity: 1, ease: Power2.EaseInOut })
+    /*tl.fromTo(outer, 0.25,  { y: '40px', opacity: 0 }, { y: 0, opacity: 1, ease:Power2.easeInOut });
+    tl.fromTo(inner, 0.25,  { y: '80px', opacity: 0 }, { y: 0, opacity: 1, ease:Power1.easeIn });*/
+
     new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 0.15

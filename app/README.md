@@ -1,7 +1,7 @@
 Project Title: SINTA
 
 Sinta is a service allowing you to personalize your own trousers, which are created by designers.
-    Every 2 months, a new designer gets the chance to present their best and favourite trousers of their newest collection.
+    Every 2 months, a new designer gets the chance to present their best and favourite trousers of their newest collection.<br>
     Users are able to change either color, material, buttons or the trousers' pocket. 
     All trousers are made for women as well as for men
 

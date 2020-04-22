@@ -15,10 +15,8 @@
             <h2 class="pick-color">or individual trouser color</h2>
                 <input class="inputcustom" type="color" list="presetColors" v-model="config.trouserColor" />
                     <datalist id="presetColors">
-                        <option>#363647</option>
-                        <option>#4E4E54</option>
-                        <option>#354232</option>
-                        <option>#0C0C0C</option>
+                        <option>#ceb7a6</option>
+                        <option>#f3f1a0</option>
                     </datalist>
 
             <!-- Pocket Color -->
@@ -32,10 +30,8 @@
             <h2 class="pick-color">or individual pocket color</h2>
                 <input class="inputcustom" type="color" list="presetColors" v-model="config.pocketColor" />
                     <datalist id="presetColors">
-                        <option>#363647</option>
-                        <option>#4E4E54</option>
-                        <option>#354232</option>
-                        <option>#0C0C0C</option>
+                        <option>#ceb7a6</option>
+                        <option>#f3f1a0</option>
                     </datalist>
 
             <!-- Logo Color -->
@@ -74,11 +70,11 @@
     </div><!-- custom nav -->
 
 
-<section class="trouser">
-    <div class="trousers trousers-1 fade">
+<div class="trouser">
+    <div class="trousers trousers-1">
             <svg-component :config="config" :type="type"></svg-component>
     </div>
-</section>
+</div>
 
 </div>
 
@@ -97,29 +93,19 @@ export default {
     props: [
         'showLogoColor'
     ],
-
     
     data() {
         return {
             type: "trouser",
 
-
- /*   #5B352F
-#8C5A4E
-#7E6863
-#A67E6F
-#DACDC8
-545454
-*/
             config: {
                 colorPicker: null,
                 trouserColor: "#614a45",
                 utilityColor: "#ceb7a6",
                 overallColor: "#ceb7a6",
-                pocketColor: "#ceb7a6",
+                pocketColor: "#6e503d",
                 logoColor: "#f3f1a0",
                 pocketChange: null,
-                price: "",
                 size: "Small",
                 shipping: null,
             },
@@ -127,11 +113,11 @@ export default {
 
             defaults: { 
                 colors: [
-                '#382927',
-                '#8C5A4E',
-                '#7E6863',
-                '#A67E6F',
-                '#B79E91'
+                '#ceb7a6',
+                '#545454',
+                '#000000',
+                '#bdc3c7',
+                '#743f31'
                 ],
 
                 sizes: [

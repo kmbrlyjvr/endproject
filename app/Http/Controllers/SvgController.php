@@ -17,7 +17,7 @@ class SvgController extends Controller
     {
         $config = new \stdClass();
         $config->trouserColor = "#614a45";
-        $config->pocketColor = "#ceb7a6";
+        $config->pocketColor = "#f3dcbe";
         $config->utilityColor = "#be9d8e";
         $config->overallColor = "#be9d8e";
         $config->logoColor = "#be9d8e";

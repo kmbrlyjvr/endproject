@@ -17,7 +17,6 @@
     <div class="container">
             <div class="loginreg">
                     <ul>
-                        <!--<div class="img"><img src="/imgs/moon.png" style="width: 40vh; margin: -90px;"></div>-->
                 
                     @if(auth()->check())
                     <li class="user" style="color:var(--main);">
@@ -34,8 +33,8 @@
                   -->
                     
                     </ul>
-                </div>
-            <div class="help_button" style="color:var(--main);"><a href="/help">help</a></div>
+                </div> 
+            <div class="help_button" style="color:var(--main);"><a href="/help">help</a></div> 
 
         @yield('container')
     </div>
