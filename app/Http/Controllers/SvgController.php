@@ -16,11 +16,12 @@ class SvgController extends Controller
     public function render($file)
     {
         $config = new \stdClass();
-        $config->trouserColor = "#614a45";
+        $config->trouserColor = "#3a2929";
         $config->pocketColor = "#f3dcbe";
         $config->utilityColor = "#be9d8e";
         $config->overallColor = "#be9d8e";
-        $config->logoColor = "#be9d8e";
+        $config->logoColor = "#f3f1a0";
+        $config->beltColor = "#614a45";
 
         $view = "";
 

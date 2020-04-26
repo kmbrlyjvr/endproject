@@ -12,10 +12,10 @@
 <!--<div class="logo-hero"><img src="/imgs/logo_colored.svg" alt="logo sinta"></div>-->
     <section class="thiscontainer">
         <p class="this outer">FROM THIS</p>
-        <div class="herotrouser inner"><img src="designers/alealitrouserarts.svg" alt="grene illustrated trouser"/></div>
+        <div class="herotrouser"><img class="inner" src="designers/alealitrouserarts.svg" alt="grene illustrated trouser"/></div>
         
         <p class="this2 outer">TO THIS</p>
-        <div class="hero2  inner"><img  src="designers/alealitrouser1.jpg" alt="illustration of green trousers"></div>
+        <div class="hero2"><img class="inner" src="designers/alealitrouser1.jpg" alt="illustration of green trousers"></div>
         <h2 class="title  outer"><span class="highlightnude">ALEALI MAY</span></h2>
     </section>
 

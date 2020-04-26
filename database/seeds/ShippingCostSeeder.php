@@ -15,7 +15,6 @@ class ShippingCostSeeder extends Seeder
         ShippingCost::create([
             'country' => 'Philippines',
             'price' => 0
-      
         ]);
 
         ShippingCost::create([

@@ -88,6 +88,7 @@ Route::post('/signup', 'AuthController@postSignup')->name('auth.postSignup')->mi
 Route::get('/profile', 'ProfileController@profile')->name('profile');
 Route::get('/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::put('/{id}', 'ProfileController@update')->name('profile.update');
+Route::get('/mycustom', 'ProfileController@custom')->name('profile.mycustom');
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
 Route::get('/{blog}', 'BlogController@show')->name('blog.show');

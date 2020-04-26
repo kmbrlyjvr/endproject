@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Orders;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,7 +67,21 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('profile', $user->id);
+    }
 
+    public function custom(Request $request)
+    {
+        $config = $request->session()->get('order', []);
+        $orders = Orders::where("user_id", Auth::user()->id)->get();
+
+
+        $data = [];
+        $data ['config'] = json_encode($config);
+
+
+        return view ('profile.mycustom', [
+            'orders' => $orders
+            ]);
     }
 
     public function getUserById($id)

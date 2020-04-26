@@ -34,8 +34,8 @@
                     <td>{{ $shipping->price }}€</td>
                 </tr>
                 <tr>
-                    <td>GRANDTOTAL</td>
-                    <td>{{ $total }}€</td>
+                    <td style="color:var(--nude);">GRANDTOTAL</td>
+                    <td style="color:var(--nude); font-size: 25px;">{{ $total }}€</td>
                 </tr>
                 <tr>
                     <td>PAYMENT</td>

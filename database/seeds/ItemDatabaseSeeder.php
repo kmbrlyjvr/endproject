@@ -13,22 +13,22 @@ class ItemDatabaseSeeder extends Seeder
     {
        Item::create([
             'title' => 'Ryerson 001',
-            'text' => 'trouser',
-            'svg' => 'trouser',
+            'text' => 'Trouser',
+            'svg' => 'Trouser',
             'price' => 140
         ]);
 
         Item::create([
             'title' => 'Ryerson 002',
-            'text' => 'utility',
-            'svg' => 'utility',
+            'text' => 'Utility',
+            'svg' => 'Utility',
             'price' => 180
         ]);
 
         Item::create([
             'title' => 'Ryerson 003',
-            'text' => 'overall',
-            'svg' => 'overall',
+            'text' => 'Overall',
+            'svg' => 'Overall',
             'price' => 200
         ]);
     }

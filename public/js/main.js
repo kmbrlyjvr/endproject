@@ -1,29 +1,29 @@
 window.addEventListener("load", function() {
 
-    var tl = new TimelineLite();
+   /* var tl = new TimelineLite();
   
-      tl.fromTo(".fade", 0.60, { y: '40px'}, { y: 0, opacity: 1, ease: Power2.EaseInOut });
+      tl.fromTo(".fade", 0.60, { y: '40px'}, { y: 0, opacity: 1, ease: Power2.EaseInOut });*/
   
     var ctrl = new ScrollMagic.Controller();
   
   // Create scenes in jQuery each() loop
   $("section").each(function(i) {
+
     var outer = $(this).find(".outer");
     var inner = $(this).find(".inner");
-    var tl = new TimelineMax();
+
+    var tl = new TimelineMax({pause:true});
     
-      tl.fromTo(outer, 0.4, {y: '40px', opacity: 0}, {y: 0, opacity: 1, ease: Power2.EaseInOut })
-      tl.fromTo(inner, 0.4, {y: '60px', opacity: 0}, {y: 0, opacity: 1, ease: Power2.EaseInOut })
-    /*tl.fromTo(outer, 0.25,  { y: '40px', opacity: 0 }, { y: 0, opacity: 1, ease:Power2.easeInOut });
-    tl.fromTo(inner, 0.25,  { y: '80px', opacity: 0 }, { y: 0, opacity: 1, ease:Power1.easeIn });*/
+      tl.fromTo(outer, 0.10, {y: '40px', opacity: 0}, {y: 0, opacity: 1, ease: Power2.EaseInOut })
+      tl.fromTo(inner, 0.10, {y: '60px', opacity: 0}, {y: 0, opacity: 1, ease: Power2.EaseInOut })
 
     new ScrollMagic.Scene({
-      triggerElement: this,
-      triggerHook: 0.15
+        triggerElement: this,
+        triggerHook: 0.15
     })
   
-    .setTween(tl)
-    .addTo(ctrl)
+        .setTween(tl)
+        .addTo(ctrl)
   
   });
   
