@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
-        "gsap": "^3.0.4",
+        "gsap": "^3.6.0",
         "imports-loader": "^0.8.0",
         "laravel-mix-scrollmagic-gsap": "^0.1.1",
         "moment": "^2.24.0",
